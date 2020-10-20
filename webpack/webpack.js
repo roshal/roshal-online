@@ -7,7 +7,7 @@ module.exports = (env = {}, argv = {}) => {
 		require('./webpack-module-assets'),
 		require('./webpack-module-babel'),
 		require('./webpack-module-sass'),
-		//require('./webpack-module-typescript'),
+		require('./webpack-module-typescript'),
 		env.analyze && require('./webpack-mode-analyze'),
 		env.develop && require('./webpack-mode-develop'),
 		env.produce && require('./webpack-mode-produce'),
@@ -18,5 +18,6 @@ module.exports = (env = {}, argv = {}) => {
 		}
 		return accumulator
 	}, [])
+
 	return p__webpack_merge.merge(configs)
 }
