@@ -1,0 +1,2 @@
+host: https://roshal.online/
+sitemap: https://roshal.online/sitemap.txt
