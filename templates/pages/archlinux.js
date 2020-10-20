@@ -4,23 +4,19 @@ import d__style from '/templates/helpers/style'
 
 const $ = require('react-hyperscript')
 
-const style = (value) => {
-	return ['.', value].join('')
-}
-
 export default (props) => {
 	return [
 		$(d__layouts__common, {
 			title: 'roshal',
 			description: 'developer from saint-petersburg',
-			keywords: ['developer', 'website', 'website personal', 'github'],
+			keywords: ['developer', 'website', 'website personal', 'archlinux'],
 		}, [
 			$(props.blocks.section, [
-				$('h1', 'github'),
+				$('h1', 'archlinux'),
 				$('p' + d__style('js-format-text'), [
 					'profile', $('a', {
-						href: 'https://github.com/roshal',
-						content: '@roshal',
+						href: 'https://www.archlinux.org',
+						content: 'archlinux.org',
 					}),
 				]),
 			]),
