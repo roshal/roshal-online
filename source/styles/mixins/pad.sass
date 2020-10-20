@@ -1,0 +1,17 @@
+=pad-b($value: $unit)
+	padding-bottom: $value
+=pad-l($value: $unit)
+	padding-left: $value
+=pad-r($value: $unit)
+	padding-right: $value
+=pad-t($value: $unit)
+	padding-top: $value
+=pad-h($value: $unit)
+	+pad-l($value)
+	+pad-r($value)
+=pad-v($value: $unit)
+	+pad-b($value)
+	+pad-t($value)
+=pad($value: $unit)
+	+pad-h($value)
+	+pad-v($value)

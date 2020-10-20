@@ -1,0 +1,74 @@
+extends /layouts/~
+block ~
+	block html
+		html
+			block html-head
+				head
+					meta(charset='UTF-8')
+					meta(name='viewport' content='width=device-width')
+					block html-head-title
+						title roshal
+					block html-head-description
+						meta(name='description' content='personal website of roshal an independent developer from saint-petersburg')
+					block html-head-kywords
+						meta(name='keywords' content='developer, developer independent, hexlet, magento, ppc, seo, website, website personal, wordpress')
+					link(rel='icon' href='/favicon.png')
+					link(rel='stylesheet' href='/styles/common.css')
+					script(async src='/scripts/common.js')
+					//- link(rel='icon' type='image/png' href='/favicon.png')
+					//- link(rel='stylesheet' type='text/css' href='/styles/common.css')
+					//- script(async type='application/javascript' src='/scripts/common.js')
+		block html-body
+			body.body
+				block block-page
+					.page
+						block block-header
+							header.section_header
+								.section_header-container
+									//- +block-section
+									.section_header-content
+										ul.section_header-list
+											li.section_header-list_item #[a(href='/') common]
+											li.section_header-list_item #[a(href='/about/') about]
+											li.section_header-list_item #[a(href='/blog/') blog]
+											li.section_header-list_item #[a(href='/contacts/') contacts]
+											li.section_header-list_item #[a(href='/ctf/') ctf]
+											li.section_header-list_item #[a(href='/dev/') dev]
+											li.section_header-list_item #[a(href='/english/') english]
+											li.section_header-list_item #[a(href='/fractal/') fractal]
+											li.section_header-list_item #[a(href='/github/') github]
+											li.section_header-list_item #[a(href='/google/') google]
+											li.section_header-list_item #[a(href='/hexlet/') hexlet]
+											li.section_header-list_item #[a(href='/javascript/') javascript]
+											li.section_header-list_item #[a(href='/linux/') linux]
+											li.section_header-list_item #[a(href='/magento/') magento]
+											li.section_header-list_item #[a(href='/php/') php]
+											li.section_header-list_item #[a(href='/ppc/') ppc]
+											li.section_header-list_item #[a(href='/psycho/') psycho]
+											li.section_header-list_item #[a(href='/python/') python]
+											li.section_header-list_item #[a(href='/russian/') russian]
+											li.section_header-list_item #[a(href='/saint-petersburg/') saint-petersburg]
+											li.section_header-list_item #[a(href='/seo/') seo]
+											li.section_header-list_item #[a(href='/telegram/') telegram]
+											li.section_header-list_item #[a(href='/unecon/') unecon]
+											li.section_header-list_item #[a(href='/wordpress/') wordpress]
+											li.section_header-list_item #[a(href='/work/') work]
+											li.section_header-list_item #[a(href='/yandex/') yandex]
+						block block-content
+						block block-footer
+							footer.section_footer
+								.section_footer-container
+									//- +block-section
+									.section_footer-content
+										.section_footer-content-l roshal
+										.section_footer-content-r 1970-1337
+mixin block-section_content
+	if block
+		.section_content
+			.section_content-container
+				.section_content-content
+					block
+mixin block-section
+	if block
+		section.section
+			block

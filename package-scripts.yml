@@ -1,0 +1,12 @@
+scripts:
+ build: gulp build --dev
+ clear: rm -fr output/*
+ develop: gulp --dev
+ deploy: firebase deploy
+ eslint: eslint source/scripts/
+ livereload: gulp livereload
+ openssl: openssl req -x509 -nodes -newkey rsa -out tls.crt.pem -keyout tls.key.pem
+ produce: rm -fr public/* && gulp build --pro && firebase deploy
+ server: gulp server
+ server-tls: gulp server-tls
+ serve: firebase serve

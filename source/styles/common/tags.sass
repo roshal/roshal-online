@@ -1,0 +1,90 @@
+body
+	+font-family
+	+font-line
+	font-size: 12pt
+	overflow-y: scroll
+	word-wrap: break-word
+	// &::-webkit-scrollbar
+		+size-w(0)
+a
+	border-bottom: 1px solid #8ac
+	color: #369
+	text-decoration: none
+	&:hover
+		border-bottom-color: #c66
+		color: #900
+blockquote
+	+mar-v
+	+pad-l
+button
+	+font-family
+	+font-line
+	cursor: pointer
+	font-size: 16px
+h1
+	+font-weight
+	+mar-v
+	font-size: 2em
+h2
+	+font-weight
+	+mar-v
+	font-size: 1.5em
+h3
+	+font-weight
+	+mar-v
+	font-size: 1.25em
+h4
+	+font-weight
+	+mar-v
+	font-size: 1em
+optgroup
+	+font-line
+select
+	+font-line
+ol
+	+mar-v
+	+pad-l
+ul
+	+mar-v
+	+pad-l
+p
+	+mar-v
+table
+	border-collapse: collapse
+caption
+	text-align: left
+td
+	vertical-align: top
+th
+	+font-weight
+	text-align: left
+	vertical-align: top
+textarea
+	+font-family
+	+font-line
+	+pad-h
+	+pad-v($unit / 2)
+	background-color: #fff
+	border: 1px solid $border-color
+	display: block
+	overflow-y: scroll
+	resize: none
+	&:focus
+		border-color: #8ac
+input
+	+font-family
+	+font-line
+	+pad-h
+	+pad-v($unit / 2)
+	background-color: #fff
+	border: 1px solid $border-color
+	display: block
+	&:focus
+		border-color: #8ac
+	&[type='submit']
+		border-radius: $unit / 2
+		cursor: pointer
+u
+	border-bottom-style: solid
+	border-bottom-width: 1px
+	text-decoration: none

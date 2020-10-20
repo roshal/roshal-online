@@ -1,0 +1,17 @@
+=pos-b($value: 0)
+	bottom: 0
+=pos-l($value: 0)
+	left: 0
+=pos-r($value: 0)
+	right: $value
+=pos-t($value: 0)
+	top: $value
+=pos-h($value: $unit)
+	+pos-l($value)
+	+pos-r($value)
+=pos-v($value: $unit)
+	+pos-b($value)
+	+pos-t($value)
+=pos($value: $unit)
+	+pos-h($value)
+	+pos-v($value)

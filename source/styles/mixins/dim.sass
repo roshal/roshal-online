@@ -1,0 +1,21 @@
+=dim-h($value: 100%)
+	height: $value
+=dim-h-max($value: 100%)
+	max-height: $value
+=dim-h-min($value: 100%)
+	min-height: $value
+=dim-w($value: 100%)
+	width: $value
+=dim-w-max($value: 100%)
+	max-width: $value
+=dim-w-min($value: 100%)
+	min-width: $value
+=dim($value: 100%)
+	+dim-h($value)
+	+dim-w($value)
+=dim-max($value: 100%)
+	+dim-h-max($value)
+	+dim-w-max($value)
+=dim-min($value: 100%)
+	+dim-h-min($value)
+	+dim-w-min($value)

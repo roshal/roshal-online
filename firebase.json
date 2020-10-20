@@ -1,0 +1,29 @@
+{
+	"hosting": {
+		"public": "public",
+		"headers": [
+			{
+				"source": "/@(fonts|images|scripts|styles)/**",
+				"headers": [
+					{
+						"key": "Cache-Control",
+						"value": "max-age=604800"
+					}
+				]
+			}
+		],
+		"redirects": [
+			{
+				"type": 302,
+				"source": "/redirect/:rest*",
+				"destination": "/category/:rest*"
+			}
+		],
+		"rewrites": [
+			{
+				"source": "/rewrite/",
+				"destination": "/index.html"
+			}
+		]
+	}
+}
