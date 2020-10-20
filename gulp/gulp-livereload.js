@@ -1,9 +1,8 @@
-const $ = require('../node/packages')(
-	'livereload',
-)
-module.exports = (options) => {
-	$['livereload'].createServer({
+
+const p__livereload = require('livereload')
+
+module.exports = (options = {}) => {
+	p__livereload.createServer({
 		debug: true,
-		//	delay: 1 << 8,
-	}).watch(options.folder)
+	}).watch(options.target)
 }

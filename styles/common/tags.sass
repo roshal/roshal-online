@@ -1,0 +1,113 @@
+
+body
+	@include font-family
+	@include font-line
+	background-image: url('https://static.glitchvid.com/wp-content/uploads/2014/06/water_new_height.png')
+	background-color: #000
+	font-size: 12pt
+	overflow-y: scroll
+	word-wrap: break-word
+	&::-webkit-scrollbar
+		@include dim-w(0)
+
+a
+	border-bottom: 1px solid #666
+	color: #ccc
+	text-decoration: none
+	&:hover
+		border-bottom-color: #999
+		color: #fff
+
+blockquote
+	@include mar-v
+	@include pad-l
+
+button
+	@include font-family
+	@include font-line
+	cursor: pointer
+	font-size: 16px
+
+h1
+	@include font-weight
+	@include mar-v
+	font-size: 2em
+
+h2
+	@include font-weight
+	@include mar-v
+	font-size: 1.5em
+
+h3
+	@include font-weight
+	@include mar-v
+	font-size: 1.25em
+
+h4
+	@include font-weight
+	@include mar-v
+	font-size: 1em
+
+optgroup
+	@include font-line
+
+select
+	@include font-line
+
+ol
+	@include mar-v
+	@include pad-l
+
+ul
+	@include mar-v
+	@include pad-l
+
+p
+	@include mar-v
+
+table
+	border-collapse: collapse
+
+caption
+	text-align: left
+
+td
+	vertical-align: top
+
+th
+	text-align: left
+	vertical-align: top
+	@include font-weight
+
+textarea
+	@include font-family
+	@include font-line
+	@include pad-h
+	@include pad-v($-unit / 2)
+	background-color: #fff
+	border: 1px solid $-border-color
+	display: block
+	overflow-y: scroll
+	resize: none
+	// &:focus
+	// 	border-color: #8ac
+
+
+input
+	@include font-family
+	@include font-line
+	@include pad-h
+	@include pad-v($-unit / 2)
+	background-color: #fff
+	border: 1px solid $-border-color
+	display: block
+	// &:focus
+	// 	border-color: #8ac
+	// &[type='submit']
+	// 	border-radius: $-unit / 2
+	// 	cursor: pointer
+
+u
+	border-bottom-style: solid
+	border-bottom-width: 1px
+	text-decoration: none

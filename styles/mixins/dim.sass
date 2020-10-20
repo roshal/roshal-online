@@ -1,0 +1,30 @@
+
+@mixin dim-h($value: 100%)
+	height: $value
+
+@mixin dim-h-max($value: 100%)
+	max-height: $value
+
+@mixin dim-h-min($value: 100%)
+	min-height: $value
+
+@mixin dim-w($value: 100%)
+	width: $value
+
+@mixin dim-w-max($value: 100%)
+	max-width: $value
+
+@mixin dim-w-min($value: 100%)
+	min-width: $value
+
+@mixin dim($value: 100%)
+	@include dim-h($value)
+	@include dim-w($value)
+
+@mixin dim-max($value: 100%)
+	@include dim-h-max($value)
+	@include dim-w-max($value)
+
+@mixin dim-min($value: 100%)
+	@include dim-h-min($value)
+	@include dim-w-min($value)

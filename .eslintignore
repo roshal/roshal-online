@@ -1,3 +1,9 @@
-/output/
-/public/
-/source/
+
+/*
+
+!/*.js
+
+!/gulp/
+!/javascript/
+!/source/
+!/webpack/

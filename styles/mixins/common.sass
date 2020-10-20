@@ -1,0 +1,16 @@
+
+@mixin clear
+	&::before
+		clear: both
+		content: ''
+		display: block
+	&::after
+		clear: both
+		content: ''
+		display: block
+
+@mixin float-l
+	float: left
+
+@mixin float-r
+	float: right

@@ -1,0 +1,14 @@
+
+@mixin section
+	background: #333
+	display: flex
+	flex-wrap: wrap
+	justify-content: center
+
+@mixin section-container
+	@include dim-w
+	@include dim-w-min(256px)
+	flex-basis: 1024px
+
+@mixin section-content
+	@include mar-h

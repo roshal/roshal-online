@@ -1,0 +1,24 @@
+
+@mixin pad-b($value: $-unit)
+	padding-bottom: $value
+
+@mixin pad-l($value: $-unit)
+	padding-left: $value
+
+@mixin pad-r($value: $-unit)
+	padding-right: $value
+
+@mixin pad-t($value: $-unit)
+	padding-top: $value
+
+@mixin pad-h($value: $-unit)
+	@include pad-l($value)
+	@include pad-r($value)
+
+@mixin pad-v($value: $-unit)
+	@include pad-b($value)
+	@include pad-t($value)
+
+@mixin pad($value: $-unit)
+	@include pad-h($value)
+	@include pad-v($value)

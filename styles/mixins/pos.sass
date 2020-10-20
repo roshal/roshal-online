@@ -1,0 +1,24 @@
+
+@mixin pos-b($value: 0)
+	bottom: 0
+
+@mixin pos-l($value: 0)
+	left: 0
+
+@mixin pos-r($value: 0)
+	right: $value
+
+@mixin pos-t($value: 0)
+	top: $value
+
+@mixin pos-h($value: $-unit)
+	@include pos-l($value)
+	@include pos-r($value)
+
+@mixin pos-v($value: $-unit)
+	@include pos-b($value)
+	@include pos-t($value)
+
+@mixin pos($value: $-unit)
+	@include pos-h($value)
+	@include pos-v($value)

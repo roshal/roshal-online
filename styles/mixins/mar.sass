@@ -1,0 +1,24 @@
+
+@mixin mar-b($value: $-unit)
+	margin-bottom: $value
+
+@mixin mar-l($value: $-unit)
+	margin-left: $value
+
+@mixin mar-r($value: $-unit)
+	margin-right: $value
+
+@mixin mar-t($value: $-unit)
+	margin-top: $value
+
+@mixin mar-h($value: $-unit)
+	@include mar-l($value)
+	@include mar-r($value)
+
+@mixin mar-v($value: $-unit)
+	@include mar-b($value)
+	@include mar-t($value)
+
+@mixin mar($value: $-unit)
+	@include mar-h($value)
+	@include mar-v($value)

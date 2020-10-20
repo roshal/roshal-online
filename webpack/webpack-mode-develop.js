@@ -1,15 +1,9 @@
-const $ = require('../node/packages')(
-	'path',
-)
-module.exports = () => {
+
+const p__path = require('path')
+
+module.exports = (env = {}, argv = {}) => {
 	return {
 		mode: 'development',
-		output: {
-			path: $['path'].join(__dirname, '..', 'output'),
-		},
-		devServer: {
-			port: 80,
-		},
 		devtool: 'source-map',
 	}
 }
