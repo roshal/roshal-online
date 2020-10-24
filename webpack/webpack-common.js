@@ -1,32 +1,31 @@
 
-const p__clean_webpack_plugin = require('clean-webpack-plugin')
-const p__path = require('path')
-const p__static_site_generator_webpack_plugin = require('static-site-generator-webpack-plugin')
+const r__clean_webpack_plugin = require('clean-webpack-plugin')
+const r__path = require('path')
+const r__static_site_generator_webpack_plugin = require('static-site-generator-webpack-plugin')
 
 const m__alias = require('../alias')
 
-const node_modules = p__path.resolve('node_modules')
+const node_modules = r__path.resolve('node_modules')
 
 module.exports = (env = {}, argv = {}) => {
 	return {
 		mode: 'none',
-		context: p__path.resolve('source'),
+		context: r__path.resolve('source'),
 		entry: {
-			'generate': './generate.js',
+			'generate': './generate.ts',
 		},
 		output: {
-			path: p__path.resolve('public'),
+			path: r__path.resolve('public'),
 			assetModuleFilename:env.develop ? 'assets/[name][ext]' : 'assets/[name][ext]?[hash]',
 			chunkFilename: env.develop ? '[name].js' : 'assets/[name].js?[hash]',
 			filename: env.develop ? '[name].js' : 'assets/[name].js',
 			publicPath: '/',
 			libraryTarget: 'umd',
-			libraryExport: 'default',
 		},
 		resolve: {
 			alias: m__alias,
 			extensions: [
-				'.js',
+				'.js', '.ts',
 			],
 			modules: [
 				node_modules,
@@ -38,8 +37,8 @@ module.exports = (env = {}, argv = {}) => {
 			],
 		},
 		plugins: [
-			new p__clean_webpack_plugin.CleanWebpackPlugin(),
-			new p__static_site_generator_webpack_plugin({
+			new r__clean_webpack_plugin.CleanWebpackPlugin(),
+			new r__static_site_generator_webpack_plugin({
 				entry: 'generate',
 			}),
 		],

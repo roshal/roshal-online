@@ -1,27 +1,32 @@
 
-const p__lodash_webpack_plugin = require('lodash-webpack-plugin')
-const p__terser_webpack_plugin = require('terser-webpack-plugin')
+const r__css_minimizer_webpack_plugin = require('css-minimizer-webpack-plugin')
+const r__terser_webpack_plugin = require('terser-webpack-plugin')
 
 module.exports = (env = {}, argv = {}) => {
 	return {
 		mode: 'production',
-		//optimization: {
-		//	minimizer: [
-		//		new p__terser_webpack_plugin({
-		//			//	parallel: true,
-		//			terserOptions: {
-		//				toplevel: true,
-		//				output: {
-		//					comments: false,
-		//				},
-		//			},
-		//			//	extractComments: true,
-		//		}),
-		//	],
-		//},
-		plugins: [
-			new p__lodash_webpack_plugin(),
-		],
+		optimization: {
+			minimizer: [
+				new r__css_minimizer_webpack_plugin({
+					minimizerOptions: {
+						preset: ['default', {
+							discardComments: {
+								removeAll: true,
+							},
+						}],
+					},
+				}),
+				new r__terser_webpack_plugin({
+					terserOptions: {
+						toplevel: true,
+						output: {
+							comments: false,
+						},
+					},
+					extractComments: false,
+				}),
+			],
+		},
 		performance: {
 			maxEntrypointSize: 128 << 12,
 			maxAssetSize: 128 << 11,
@@ -29,6 +34,5 @@ module.exports = (env = {}, argv = {}) => {
 				return asset.endsWith('.js')
 			},
 		},
-		devtool: 'nosources-source-map',
 	}
 }

@@ -1,12 +1,13 @@
 
-const p__path = require('path')
+const r__path = require('path')
 
 module.exports = (env = {}, argv = {}) => {
+
 	const rules = []
 
 	rules.push({
 		include: [
-			p__path.resolve('assets'),
+			r__path.resolve('assets'),
 		],
 		type: 'asset/resource',
 		generator: {
@@ -16,7 +17,7 @@ module.exports = (env = {}, argv = {}) => {
 
 	rules.push({
 		include: [
-			p__path.resolve('images'),
+			r__path.resolve('images'),
 		],
 		type: 'asset',
 		generator: {
@@ -29,4 +30,5 @@ module.exports = (env = {}, argv = {}) => {
 			rules,
 		},
 	}
+
 }

@@ -1,7 +1,8 @@
 
-const p__webpack_merge = require('webpack-merge')
+const r__webpack_merge = require('webpack-merge')
 
 module.exports = (env = {}, argv = {}) => {
+
 	const configs = [
 		require('./webpack-common'),
 		require('./webpack-module-assets'),
@@ -19,5 +20,6 @@ module.exports = (env = {}, argv = {}) => {
 		return accumulator
 	}, [])
 
-	return p__webpack_merge.merge(configs)
+	return r__webpack_merge.merge(configs)
+
 }

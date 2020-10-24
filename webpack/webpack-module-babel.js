@@ -1,7 +1,8 @@
 
-const p__path = require('path')
+const r__path = require('path')
 
 module.exports = (env = {}, argv = {}) => {
+
 	const rules = []
 
 	rules.push({
@@ -9,8 +10,8 @@ module.exports = (env = {}, argv = {}) => {
 			/\.js$/,
 		],
 		include: [
-			p__path.resolve('source'),
-			p__path.resolve('templates'),
+			r__path.resolve('source'),
+			r__path.resolve('templates'),
 		],
 		use: [
 			{
@@ -24,4 +25,5 @@ module.exports = (env = {}, argv = {}) => {
 			rules,
 		},
 	}
+
 }
