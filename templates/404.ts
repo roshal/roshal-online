@@ -1,13 +1,15 @@
 
-import d__layouts__common from './layouts/common'
+import * as m__helpers from '/templates/commons/helpers'
+
+import d__layouts__common from '/templates/layouts/common'
+
+const s__styles = require('./styles.sass')
 
 const $ = require('react-hyperscript')
 
-const style = (value) => {
-	return ['.', value].join('')
-}
+const style = m__helpers.styler(s__styles)
 
-export default (props) => {
+export default (props: {}) => {
 	return [
 		$(d__layouts__common, {
 			title: 'error',

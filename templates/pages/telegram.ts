@@ -1,10 +1,19 @@
 
+import * as m__helpers from '/templates/commons/helpers'
+
 import d__layouts__common from '/templates/layouts/common'
-import d__style from '/templates/helpers/style'
+
+const s__styles = require('./styles.sss')
 
 const $ = require('react-hyperscript')
 
-export default (props) => {
+const style = m__helpers.styler(s__styles)
+
+export default (props: {
+	blocks: {
+		section: any,
+	},
+}) => {
 	return [
 		$(d__layouts__common, {
 			title: 'roshal',
@@ -13,7 +22,7 @@ export default (props) => {
 		}, [
 			$(props.blocks.section, [
 				$('h1', 'telegram'),
-				$('p' + d__style('js-format-text'), [
+				$('p' + style('js-format-text'), [
 					'profile', $('a', {
 						href: 'https://t.me/roshal',
 						content: '@roshal',

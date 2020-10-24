@@ -1,9 +1,13 @@
 
-import '/styles/common.sass'
+import * as m__helpers from '/templates/commons/helpers'
 
-import m__favicon from '../../assets/favicon.png'
+//import d__favicon from '/assets/favicon.png'
+
+const s__styles = require('/styles/common.sass')
 
 const $ = require('react-hyperscript')
+
+const style = m__helpers.styler(s__styles)
 
 const c__og = (props) => {
 	if (props.og == null) {
@@ -11,19 +15,17 @@ const c__og = (props) => {
 	}
 	return ['description', 'image', 'title', 'type', 'url'].map((value) => {
 		return [
-			props.og['value'] && $('meta', {
+			props.og?.['value'] && $('meta', {
 				property: ['og', value].join(':'),
-				content: props.og[value],
+				content: props.og?.[value],
 			}),
 		]
 	})
 }
 
-const style = (value) => {
-	return ['.', value].join('')
-}
-
-export default (props = {}) => {
+export default (props: {
+	[key: string]: any,
+} = {}) => {
 	const head = [
 		$('meta', {
 			charSet: 'UTF-8',
@@ -39,18 +41,18 @@ export default (props = {}) => {
 			name: 'description',
 			content: props.description,
 		}),
-		props.keywords.length && $('meta', {
+		props.keywords?.length && $('meta', {
 			name: 'keywords',
-			content: props.keywords.join(', '),
+			content: props.keywords?.join(', '),
 		}),
 		//props.image,
 		//props.type,
 		//props.url,
-		$('link', {
-			rel: 'icon',
-			href: m__favicon,
-		}),
-		props.assets.css.map((value) => {
+		//$('link', {
+		//	rel: 'icon',
+		//	href: d__favicon,
+		//}),
+		props.assets?.css.map((value) => {
 			return [
 				$('link', {
 					rel: 'stylesheet',
@@ -58,7 +60,7 @@ export default (props = {}) => {
 				}),
 			]
 		}),
-		props.assets.js.map((value) => {
+		props.assets?.js.map((value) => {
 			return [
 				$('script', {
 					async: true,

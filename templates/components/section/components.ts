@@ -1,12 +1,7 @@
 
-import * as p__react from 'react'
+import * as m__helpers from '/templates/commons/helpers'
 
-import * as m__helpers from '~/commons/helpers'
-
-import * as m__components from './components'
-import * as m__types from './types'
-
-const s__styles = require('./styles.sss')
+const s__styles = require('./styles.sass')
 
 const $ = require('react-hyperscript')
 
@@ -24,10 +19,6 @@ const c__og = (props) => {
 			}),
 		]
 	})
-}
-
-const style = (value) => {
-	return ['.', value].join('')
 }
 
 export default (props = {}) => {
