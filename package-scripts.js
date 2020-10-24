@@ -18,23 +18,18 @@ nps.lint = concurrent('eslint', 'stylelint')
 nps.test = series('jest')
 
 nps.build = {
-	develop: 'gulp --develop -- build',
-	produce: 'gulp --produce -- build',
+	develop: 'webpack --env develop',
+	produce: 'webpack --env produce',
 }
 
 nps.watch = {
-	develop: 'gulp --develop --observe -- build',
-	produce: 'gulp --produce --observe -- build',
+	develop: 'webpack --env develop --watch',
+	produce: 'webpack --env produce --watch',
 }
 
 nps.serve = {
-	develop: 'gulp --develop -- serve',
-	produce: 'gulp --produce -- serve',
-}
-
-nps.livereload = {
-	develop: 'gulp --develop -- livereload',
-	produce: 'gulp --produce -- livereload',
+	develop: 'webpack --env develop serve',
+	produce: 'webpack --env produce serve',
 }
 
 nps.nodemon = 'nodemon -e js -w webpack -x webpack-dev-server --hot --develop'
@@ -56,9 +51,4 @@ nps.eslint = {
 nps.stylelint = {
 	default: 'stylelint source/**/*.ss',
 	fix: 'stylelint --fix source/**/*.ss',
-}
-
-nps.jest = {
-	default: 'jest source',
-	watch: 'jest --watch source',
 }
