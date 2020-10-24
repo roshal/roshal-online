@@ -1,18 +1,18 @@
 
-const p__gulp_watch = require('gulp-watch')
-const p__lodash_webpack_plugin = require('lodash-webpack-plugin')
-const p__multipipe = require('multipipe')
-const p__path = require('path')
-const p__vinyl_named = require('vinyl-named')
-const p__webpack = require('webpack')
-const p__webpack_stream = require('webpack-stream')
+const r__gulp_watch = require('gulp-watch')
+const r__lodash_webpack_plugin = require('lodash-webpack-plugin')
+const r__multipipe = require('multipipe')
+const r__path = require('path')
+const r__vinyl_named = require('vinyl-named')
+const r__webpack = require('webpack')
+const r__webpack_stream = require('webpack-stream')
 
 module.exports = (flags = {}, paths = {}, options = {}) => {
-	const glob = p__path.join(paths.source, '*')
-	const source = p__gulp_watch(glob, options)
-	const stream = p__multipipe(
-		p__vinyl_named(),
-		p__webpack_stream({
+	const glob = r__path.join(paths.source, '*')
+	const source = r__gulp_watch(glob, options)
+	const stream = r__multipipe(
+		r__vinyl_named(),
+		r__webpack_stream({
 			mode: (() => {
 				if (flags.develop) {
 					return 'development'
@@ -26,19 +26,19 @@ module.exports = (flags = {}, paths = {}, options = {}) => {
 			watch: flags.observe,
 			resolve: {
 				modules: [
-					p__path.join(paths.source, '..', '..', 'node_modules'),
+					r__path.join(paths.source, '..', '..', 'node_modules'),
 				],
 				alias: {
-					'': p__path.join(paths.source),
+					'': r__path.join(paths.source),
 				},
 				extensions: [
 					'.js',
 				],
 			},
 			plugins: [
-				new p__lodash_webpack_plugin(),
+				new r__lodash_webpack_plugin(),
 				...flags.develop ? [
-					new p__webpack.SourceMapDevToolPlugin(),
+					new r__webpack.SourceMapDevToolPlugin(),
 				] : [],
 			],
 			module: {
@@ -46,10 +46,10 @@ module.exports = (flags = {}, paths = {}, options = {}) => {
 					{
 						resource: {
 							exclude: [
-								p__path.join(paths.source, '..', '..', 'node_modules'),
+								r__path.join(paths.source, '..', '..', 'node_modules'),
 							],
 							include: [
-								p__path.join(paths.source),
+								r__path.join(paths.source),
 							],
 							test: [
 								/\.js$/,
@@ -71,7 +71,7 @@ module.exports = (flags = {}, paths = {}, options = {}) => {
 					},
 				],
 			},
-		}, p__webpack),
+		}, r__webpack),
 	)
 	return source.pipe(stream)
 }

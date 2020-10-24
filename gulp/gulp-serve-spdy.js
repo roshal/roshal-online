@@ -1,11 +1,11 @@
 
-const p__express = require('express')
-const p__spdy = require('spdy')
+const r__express = require('express')
+const r__spdy = require('spdy')
 
 export default (options) => {
-	const express = p__express()
-	const server = p__express.static(options.target)
-	const spdy = p__spdy.createServer({
+	const express = r__express()
+	const server = r__express.static(options.target)
+	const spdy = r__spdy.createServer({
 		requestCert: true,
 	}, express)
 	express.use(server)

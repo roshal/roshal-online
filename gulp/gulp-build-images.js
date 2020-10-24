@@ -1,15 +1,15 @@
 
-const p__gulp_load_plugins = require('gulp-load-plugins')
-const p__gulp_watch = require('gulp-watch')
-const p__multipipe = require('multipipe')
-const p__path = require('path')
+const r__gulp_load_plugins = require('gulp-load-plugins')
+const r__gulp_watch = require('gulp-watch')
+const r__multipipe = require('multipipe')
+const r__path = require('path')
 
-const plugins = p__gulp_load_plugins()
+const plugins = r__gulp_load_plugins()
 
 module.exports = (flags = {}, paths = {}, options = {}) => {
-	const glob = p__path.join(paths.source, '*')
-	const source = p__gulp_watch(glob, options)
-	return p__multipipe(source, ...flags.produce ? [
+	const glob = r__path.join(paths.source, '*')
+	const source = r__gulp_watch(glob, options)
+	return r__multipipe(source, ...flags.produce ? [
 		plugins.imagemin([
 			plugins.imagemin.gifsicle(),
 			plugins.imagemin.mozjpeg(),

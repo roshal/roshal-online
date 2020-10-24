@@ -1,9 +1,9 @@
 
-const p__express = require('express')
+const r__express = require('express')
 
 module.exports = (options = {}) => {
-	const express = p__express()
-	const server = p__express.static(options.target)
+	const express = r__express()
+	const server = r__express.static(options.target)
 	express.use(server)
 	express.listen(options.port)
 	console.info('port', options.port)

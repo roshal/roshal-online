@@ -1,8 +1,8 @@
 
-const p__livereload = require('livereload')
+const r__livereload = require('livereload')
 
 module.exports = (options = {}) => {
-	p__livereload.createServer({
+	r__livereload.createServer({
 		debug: true,
 	}).watch(options.target)
 }
