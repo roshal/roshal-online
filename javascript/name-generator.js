@@ -1,5 +1,5 @@
 
-const p__path = require('path')
+const r__path = require('path')
 
 const numbers = '0123456789'
 const letters = 'abcdefghijklmnopqrstuvwxyz'
@@ -29,7 +29,7 @@ module.exports = (base) => {
 	const limit_prev = symbols.length
 	return (context, mask, name) => {
 		let array, value
-		value = p__path.relative(context.rootContext, context.context)
+		value = r__path.relative(context.rootContext, context.context)
 		value = [value, name].join('.').split('')
 		array = []
 		value = value.reduce((accumulator, value, index) => {

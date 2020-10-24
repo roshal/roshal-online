@@ -1,20 +1,20 @@
 
-const p__express = require('express')
-const p__webpack = require('webpack')
-const p__webpack_dev_middleware = require('webpack-dev-middleware')
-const p__webpack_hot_middleware = require('webpack-hot-middleware')
-const p__yargs = require('yargs')
+const r__express = require('express')
+const r__webpack = require('webpack')
+const r__webpack_dev_middleware = require('webpack-dev-middleware')
+const r__webpack_hot_middleware = require('webpack-hot-middleware')
+const r__yargs = require('yargs')
 
 const m__config = require('../webpack.config.js')
 
-const express = p__express()
+const express = r__express()
 
-const config = m__config(p__yargs.argv, p__yargs.argv)
+const config = m__config(r__yargs.argv, r__yargs.argv)
 
-const compiler = p__webpack(config)
+const compiler = r__webpack(config)
 
-const webpack_dev_middleware = p__webpack_dev_middleware(compiler)
-const webpack_hot_middleware = p__webpack_hot_middleware(compiler)
+const webpack_dev_middleware = r__webpack_dev_middleware(compiler)
+const webpack_hot_middleware = r__webpack_hot_middleware(compiler)
 
 express.use(webpack_dev_middleware)
 express.use(webpack_hot_middleware)

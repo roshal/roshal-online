@@ -1,12 +1,12 @@
 
-const p__express = require('express')
-const p__path = require('path')
+const r__express = require('express')
+const r__path = require('path')
 
-const path = p__path.resolve('../public/index.html')
+const path = r__path.resolve('../public/index.html')
 
-const express = p__express()
+const express = r__express()
 
-const static = p__express.static()
+const static = r__express.static()
 
 express.use(static)
 

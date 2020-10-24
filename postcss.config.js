@@ -1,13 +1,13 @@
 
-const p__path = require('path')
-const p__postcss_simple_vars = require('postcss-simple-vars')
+const r__path = require('path')
+const r__postcss_simple_vars = require('postcss-simple-vars')
 
 const alias = {
 	'//': (id) => {
-		return p__path.resolve(id)
+		return r__path.resolve(id)
 	},
 	'/': (id) => {
-		return p__path.resolve('styles', id)
+		return r__path.resolve('styles', id)
 	},
 }
 
@@ -20,7 +20,7 @@ exports.plugins = {
 			'nesting-rules': true,
 		},
 		insertBefore: {
-			'all-property': p__postcss_simple_vars,
+			'all-property': r__postcss_simple_vars,
 		},
 	},
 	'postcss-import': {
