@@ -1,2 +1,2 @@
 
-module.exports = require('./webpack/webpack')
+module.exports = require('./webpack/webpack-base')

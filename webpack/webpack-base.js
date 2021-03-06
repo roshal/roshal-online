@@ -2,8 +2,7 @@
 const r__webpack_merge = require('webpack-merge')
 
 module.exports = (env = {}, argv = {}) => {
-
-	const configs = [
+	const array = [
 		require('./webpack-common'),
 		require('./webpack-module-assets'),
 		require('./webpack-module-babel'),
@@ -19,7 +18,5 @@ module.exports = (env = {}, argv = {}) => {
 		}
 		return accumulator
 	}, [])
-
-	return r__webpack_merge.merge(configs)
-
+	return r__webpack_merge.merge(array)
 }
