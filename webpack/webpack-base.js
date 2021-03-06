@@ -4,6 +4,7 @@ const r__webpack_merge = require('webpack-merge')
 module.exports = (env = {}, argv = {}) => {
 	const array = [
 		require('./webpack-common'),
+		require('./webpack-dev-server'),
 		require('./webpack-module-assets'),
 		require('./webpack-module-babel'),
 		require('./webpack-module-sass'),
