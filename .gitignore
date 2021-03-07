@@ -20,10 +20,13 @@
 !/package-scripts.js
 !/package.json
 !/postcss.config.js
+!/tsconfig.json
 !/webpack.config.js
 
 !/assets/
 !/common/
+!/commons/
+!/components/
 !/docs/
 !/eslint/
 !/gulp/
@@ -33,4 +36,5 @@
 !/source/
 !/styles/
 !/templates/
+!/typings/
 !/webpack/
