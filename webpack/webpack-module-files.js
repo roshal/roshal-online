@@ -39,4 +39,10 @@ module.exports = (env = {}, argv = {}) => {
 		],
 	})
 
+	return {
+		module: {
+			rules,
+		},
+	}
+
 }
