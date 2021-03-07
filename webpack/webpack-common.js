@@ -39,7 +39,7 @@ module.exports = (env = {}, argv = {}) => {
 		},
 		plugins: [
 			...env.WEBPACK_SERVE ? [] : [
-				new r__clean_webpack_plugin.CleanWebpackPlugin(),
+				new r__clean_webpack_plugin(),
 			],
 			new r__static_site_generator_webpack_plugin({
 				crawl: true,
