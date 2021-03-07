@@ -92,7 +92,7 @@ module.exports = (env = {}, argv = {}) => {
 		plugins: [
 			new r__mini_css_extract_plugin({
 				filename: env.develop ? '[name].css' : 'assets/[name].css?[hash]',
-				//ignoreOrder: true,
+				//	ignoreOrder: true,
 			}),
 		],
 	}
