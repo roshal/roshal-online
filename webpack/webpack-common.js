@@ -15,12 +15,13 @@ module.exports = (env = {}, argv = {}) => {
 			start: './start.ts',
 		},
 		output: {
-			path: r__path.resolve('public'),
 			assetModuleFilename:env.develop ? 'assets/[name][ext]' : 'assets/[name][ext]?[hash]',
 			chunkFilename: env.develop ? '[name].js' : 'assets/[name].js?[hash]',
 			filename: env.develop ? '[name].js' : 'assets/[name].js',
+			libraryTarget: 'commonjs2',
+			path: r__path.resolve('public'),
 			publicPath: '/',
-			libraryTarget: 'umd',
+			//	libraryTarget: 'umd',
 		},
 		resolve: {
 			alias: m__alias,
@@ -37,9 +38,15 @@ module.exports = (env = {}, argv = {}) => {
 			],
 		},
 		plugins: [
-			new r__clean_webpack_plugin.CleanWebpackPlugin(),
+			...env.WEBPACK_SERVE ? [] : [
+				new r__clean_webpack_plugin.CleanWebpackPlugin(),
+			],
 			new r__static_site_generator_webpack_plugin({
+				crawl: true,
 				entry: 'start',
+				globals: {
+					window: {},
+				},
 			}),
 		],
 		devServer: {
