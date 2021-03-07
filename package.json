@@ -75,6 +75,7 @@
     "pug-plain-loader": "^1.0.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
+    "react-helmet": "^6.1.0",
     "react-hot-loader": "^4.13.0",
     "react-hyperscript": "^3.2.0",
     "react-router-dom": "^5.2.0",
