@@ -1,4 +1,4 @@
 
-declare module '*.sss'
+declare module '*.sass'
 
 declare module '*.png'

@@ -3,7 +3,7 @@ import * as m__helpers from '/templates/commons/helpers'
 
 import d__layouts__common from '/templates/layouts/common'
 
-const s__styles = require('./styles.sss')
+const s__styles = require('./styles.sass')
 
 const $ = require('react-hyperscript')
 
