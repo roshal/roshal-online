@@ -14,8 +14,8 @@ module.exports = (env = {}, argv = {}) => {
 		env.produce && require('./webpack-mode-produce'),
 	].reduce((accumulator, value) => {
 		if (value) {
-			const config = value(env, argv)
-			accumulator.push(config)
+			const object = value(env, argv)
+			accumulator.push(object)
 		}
 		return accumulator
 	}, [])
