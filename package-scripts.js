@@ -22,17 +22,12 @@ nps.build = {
 	produce: 'webpack --env produce',
 }
 
-nps.watch = {
-	develop: 'webpack --env develop --watch',
-	produce: 'webpack --env produce --watch',
-}
-
 nps.serve = {
-	develop: 'webpack --env develop serve',
-	produce: 'webpack --env produce serve',
+	develop: 'webpack --hot --env develop serve',
+	produce: 'webpack --hot --env produce serve',
 }
 
-nps.nodemon = 'nodemon -e js -w webpack -x webpack-dev-server --hot --develop'
+nps.nodemon = 'nodemon -e js -w webpack -x webpack serve --hot --env develop'
 
 nps.firebase = {
 	deploy: 'firebase deploy',
