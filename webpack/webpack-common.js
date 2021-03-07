@@ -12,7 +12,7 @@ module.exports = (env = {}, argv = {}) => {
 		mode: 'none',
 		context: r__path.resolve('source'),
 		entry: {
-			'generate': './generate.ts',
+			start: './start.ts',
 		},
 		output: {
 			path: r__path.resolve('public'),
@@ -39,7 +39,7 @@ module.exports = (env = {}, argv = {}) => {
 		plugins: [
 			new r__clean_webpack_plugin.CleanWebpackPlugin(),
 			new r__static_site_generator_webpack_plugin({
-				entry: 'generate',
+				entry: 'start',
 			}),
 		],
 		devServer: {
