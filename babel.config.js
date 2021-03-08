@@ -1,6 +1,7 @@
 
 exports.presets = [
 	'@babel/preset-env',
+	'@babel/preset-typescript',
 ]
 
 exports.plugins = [
@@ -8,4 +9,5 @@ exports.plugins = [
 	'@babel/plugin-syntax-dynamic-import',
 	'@babel/plugin-transform-runtime',
 	'babel-plugin-lodash',
+	'react-hot-loader/babel',
 ]

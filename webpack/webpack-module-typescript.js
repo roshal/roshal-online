@@ -10,8 +10,9 @@ module.exports = (env = {}, argv = {}) => {
 			/\.ts$/,
 		],
 		include: [
+			r__path.resolve('commons'),
+			r__path.resolve('components'),
 			r__path.resolve('source'),
-			r__path.resolve('templates'),
 		],
 		resolve: {
 			extensions: [

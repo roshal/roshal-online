@@ -7,15 +7,35 @@ module.exports = (env = {}, argv = {}) => {
 
 	rules.push({
 		test: [
-			/\.js$/,
+			/\.ts$/,
 		],
 		include: [
+			r__path.resolve('commons'),
+			r__path.resolve('components'),
 			r__path.resolve('source'),
-			r__path.resolve('templates'),
 		],
+		resolve: {
+			extensions: [
+				'.js', '.ts',
+			],
+		},
 		use: [
 			{
 				loader: 'babel-loader',
+				options: {
+					cacheDirectory: true,
+					// context: r__path.resolve(),
+				},
+			},
+			{
+				loader: 'ts-loader',
+				options: {
+					// context: r__path.resolve(),
+					configFile: 'tsconfig.json',
+					compilerOptions: {
+						sourceMap: !!env.develop,
+					},
+				},
 			},
 		],
 	})

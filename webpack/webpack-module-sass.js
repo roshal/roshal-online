@@ -2,7 +2,7 @@
 const r__mini_css_extract_plugin = require('mini-css-extract-plugin')
 const r__path = require('path')
 
-const m__name_generator = require('../javascript/name-generator')
+const m__generate_name = require('../javascript/name-generator')
 
 module.exports = (env = {}, argv = {}) => {
 
@@ -34,10 +34,10 @@ module.exports = (env = {}, argv = {}) => {
 		options: {
 			modules: {
 				...env.develop ? {
-					getLocalIdent: m__name_generator(10),
+					getLocalIdent: m__generate_name.letters,
 				} : {},
 				...env.produce ? {
-					getLocalIdent: m__name_generator(26),
+					getLocalIdent: m__generate_name.letters,
 				} : {},
 			},
 			importLoaders: 1,
@@ -77,7 +77,7 @@ module.exports = (env = {}, argv = {}) => {
 				options: {
 					sassOptions: {
 						...options,
-						webpackImporter: false,
+						webpackImporter: true,
 					},
 				},
 			},

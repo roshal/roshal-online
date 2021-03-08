@@ -6,15 +6,20 @@
 .section-header--container
 	@include section-container
 
-.section-header--content
+.section-header--content--l
+	@include float-l
+	@include section-content
+
+.section-header--content--r
+	@include float-r
 	@include section-content
 
 .section-header--list
 	@include clear
-	margin: 8px -8px
+	margin: $-unit / 2 $-unit * -1
 	padding: 0
 	list-style: none
 
 .section-header--list-item
-	margin: $-unit / 2
+	margin: $-unit / 2 $-unit
 	float: left

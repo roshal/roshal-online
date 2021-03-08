@@ -12,13 +12,18 @@ module.exports = (env = {}, argv = {}) => {
 		context: r__path.resolve('source'),
 		output: {
 			assetModuleFilename:env.develop ? 'assets/[name][ext]' : 'assets/[name][ext]?[hash]',
-			chunkFilename: env.develop ? '[name].js' : 'assets/[name].js?[hash]',
+			chunkFilename: env.develop ? '[name].js' : 'assets/[id].js?[hash]',
 			filename: env.develop ? '[name].js' : 'assets/[name].js',
 			path: r__path.resolve('public'),
 			publicPath: '/',
 		},
 		resolve: {
-			alias: m__alias,
+			alias: {
+				...m__alias,
+				...argv.hot ? {
+					'react-dom': '@hot-loader/react-dom',
+				} : {},
+			},
 			extensions: [
 				'.js', '.ts',
 			],
