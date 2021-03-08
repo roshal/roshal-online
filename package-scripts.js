@@ -2,9 +2,7 @@
 const concurrent = require('nps-utils').concurrent.nps
 const series = require('nps-utils').series.nps
 
-const nps = {}
-
-exports.scripts = nps
+const nps = exports.scripts = {}
 
 nps.analyze = series('serve.analyze')
 nps.develop = series('serve.develop')
@@ -12,10 +10,12 @@ nps.produce = series('serve.produce')
 
 nps.release = series('clean', 'build.produce', 'firebase.deploy')
 
-nps.clean = 'rimraf public/*'
-
 nps.lint = concurrent('eslint', 'stylelint')
 nps.test = series('jest')
+
+nps.clean = 'rimraf public/*'
+
+nps.nodemon = 'nodemon -e js -w webpack -x webpack serve --env develop --hot'
 
 nps.build = {
 	analyze: 'webpack --env analyze',
@@ -28,8 +28,6 @@ nps.serve = {
 	develop: 'webpack serve --env develop --hot',
 	produce: 'webpack serve --env produce --hot',
 }
-
-nps.nodemon = 'nodemon -e js -w webpack -x webpack serve --env develop --hot'
 
 nps.firebase = {
 	deploy: 'firebase deploy',
