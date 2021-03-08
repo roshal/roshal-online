@@ -1,5 +1,5 @@
 
-import $ from 'react-hyperscript'
+import * as $ from 'react-hyperscript'
 
 import * as m__helpers from '/templates/commons/helpers'
 import d__layouts__common from '/templates/layouts/common'

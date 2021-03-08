@@ -1,7 +1,7 @@
 
 import * as p__react from 'react'
+import * as p__react_dom__server from 'react-dom/server'
 import i__pretty from 'pretty'
-import i__react_dom__server from 'react-dom/server'
 
 //	import '//trackers/google-analytics'
 //	import '//trackers/yandex-metrika'
@@ -24,7 +24,7 @@ const render = (locals: {
 		assets: props.assets,
 		path: locals.path,
 	})
-	const html = i__react_dom__server.renderToStaticMarkup(element)
+	const html = p__react_dom__server.renderToStaticMarkup(element)
 	const markup = ['<!DOCTYPE html>', html].join('')
 	return process.env.NODE_ENV === 'production' ? markup : i__pretty(markup, {
 		ocd: true,

@@ -1,5 +1,5 @@
 
-import $ from 'react-hyperscript'
+import * as $ from 'react-hyperscript'
 
 import * as m__helpers from '/commons/helpers'
 

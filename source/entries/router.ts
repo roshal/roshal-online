@@ -1,6 +1,6 @@
 
-import $ from 'react-hyperscript'
-import * as p__react from 'pretty'
+import * as $ from 'react-hyperscript'
+import * as p__react from 'react'
 import * as p__react_hot_loader__root from 'react-hot-loader/root'
 import * as p__react_router_dom from 'react-router-dom'
 
@@ -14,7 +14,7 @@ interface i__props {
 	path: string,
 }
 
-const component: p__react.FC = (props: i__props) => {
+const component: p__react.FC<i__props> = (props) => {
 	console.log(9876543210, props)
 	return [
 		$(p__react_router_dom.StaticRouter, {
