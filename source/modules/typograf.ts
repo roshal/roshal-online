@@ -1,5 +1,5 @@
 
-import p__typograf  from 'typograf'
+import * as p__typograf  from 'typograf'
 
 const typograf = new p__typograf({
 	locale: ['en-US', 'ru'],

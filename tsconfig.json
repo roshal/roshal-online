@@ -1,6 +1,5 @@
 {
 	"compilerOptions": {
-		"allowSyntheticDefaultImports": true,
 		"baseUrl": ".",
 		"moduleResolution": "node",
 		"outDir": "output",

@@ -1,5 +1,5 @@
 
 declare module '*.png' {
 	const string: string
-	export = string
+	export default string
 }
