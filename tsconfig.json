@@ -12,5 +12,5 @@
 		"target": "esnext",
 		"typeRoots": ["./node_modules/@types", "./typings"],
 	},
-	"include": ["source"],
+	"include": ["commons", "components", "source", "typings"],
 }

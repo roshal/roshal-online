@@ -1,4 +1,2 @@
 
-declare module '*.sass'
-
-declare module '*.png'
+//	declare function require(string): string

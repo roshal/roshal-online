@@ -1,5 +1,5 @@
 
 declare module '*.png' {
-	const value: any
-	export default value
+	const string: string
+	export = string
 }
