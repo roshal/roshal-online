@@ -7,3 +7,7 @@ exports.files = [
 exports.extends = [
 	'plugin:jest/recommended',
 ]
+
+exports.rules = {
+	'jest/valid-title': 'off',
+}

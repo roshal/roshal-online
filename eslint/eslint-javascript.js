@@ -9,11 +9,16 @@ exports.parserOptions = {
 }
 
 exports.env = {
+	browser: true,
 	node: true,
-	commonjs: false,
 }
 
 exports.rules = {
 	/* variables */
-	'no-unused-vars': 'off',
+	'no-undef': 'off',
+	'no-unused-vars': ['warn', {
+		args: 'none',
+	}],
+	/* stylistic-issues */
+	'indent': 'off',
 }

@@ -16,7 +16,7 @@ exports.rules = {
 	'new-parens': ['error'],
 	'no-mixed-spaces-and-tabs': ['error'],
 	/* plugin:import */
-	'import/no-unresolved': ['off'],
+	'import/no-unresolved': 'off',
 }
 
 exports.overrides = [
