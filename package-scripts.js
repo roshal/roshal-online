@@ -1,14 +1,14 @@
 
 const concurrent = require('nps-utils').concurrent.nps
-
 const series = require('nps-utils').series.nps
 
 const nps = {}
 
 exports.scripts = nps
 
-nps.develop = concurrent('watch.develop', 'serve.develop')
-nps.produce = concurrent('watch.produce', 'serve.produce')
+nps.analyze = series('serve.analyze')
+nps.develop = series('serve.develop')
+nps.produce = series('serve.produce')
 
 nps.release = series('clean', 'build.produce', 'firebase.deploy')
 
@@ -18,16 +18,18 @@ nps.lint = concurrent('eslint', 'stylelint')
 nps.test = series('jest')
 
 nps.build = {
+	analyze: 'webpack --env analyze',
 	develop: 'webpack --env develop',
 	produce: 'webpack --env produce',
 }
 
 nps.serve = {
-	develop: 'webpack --hot --env develop serve',
-	produce: 'webpack --hot --env produce serve',
+	analyze: 'webpack serve --env analyze --hot',
+	develop: 'webpack serve --env develop --hot',
+	produce: 'webpack serve --env produce --hot',
 }
 
-nps.nodemon = 'nodemon -e js -w webpack -x webpack serve --hot --env develop'
+nps.nodemon = 'nodemon -e js -w webpack -x webpack serve --env develop --hot'
 
 nps.firebase = {
 	deploy: 'firebase deploy',
@@ -44,6 +46,11 @@ nps.eslint = {
 }
 
 nps.stylelint = {
-	default: 'stylelint source/**/*.ss',
-	fix: 'stylelint --fix source/**/*.ss',
+	default: 'stylelint styles source/**/*.sass',
+	fix: 'stylelint --fix styles source/**/*.sass',
+}
+
+nps.jest = {
+	default: 'jest source',
+	watch: 'jest --watch source',
 }
