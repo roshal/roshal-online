@@ -1,8 +1,8 @@
 
 const object = {
-	zero,
+	index,
 } = {
-	zero: 0, unit: 1,
+	index: 0, value: 1,
 }
 
-console.log(object, zero)
+console.log(object, index)
