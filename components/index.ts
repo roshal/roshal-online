@@ -1,13 +1,12 @@
 
-import * as m__helpers from '/commons/helpers'
+import $ from 'react-hyperscript'
 
+import * as m__helpers from '/commons/helpers'
 import d__layouts__common from '/components/layouts/common'
 
 import m__format from '//modules/format'
 
-const s__styles = require('/styles/common.sass')
-
-const $ = require('react-hyperscript')
+import s__styles from './styles.sass'
 
 const style = m__helpers.styler(s__styles)
 

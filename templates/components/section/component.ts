@@ -1,9 +1,9 @@
 
+import $ from 'react-hyperscript'
+
 import * as m__helpers from '/templates/commons/helpers'
 
-const s__styles = require('./styles.sass')
-
-const $ = require('react-hyperscript')
+import s__styles from './styles.sass'
 
 const style = m__helpers.styler(s__styles)
 

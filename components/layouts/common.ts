@@ -1,11 +1,10 @@
 
+import $ from 'react-hyperscript'
+
 import * as m__helpers from '/commons/helpers'
+import d__favicon from '/assets/favicon.png'
 
-const s__styles = require('/styles/common.sass')
-
-const d__favicon = require('/assets/favicon.png')
-
-const $ = require('react-hyperscript')
+import s__styles from './styles.sass'
 
 const style = m__helpers.styler(s__styles)
 

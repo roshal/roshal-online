@@ -1,11 +1,10 @@
 
+import $ from 'react-hyperscript'
+
 import * as m__helpers from '/templates/commons/helpers'
+import d__favicon from '/assets/favicon.png'
 
-//import d__favicon from '/assets/favicon.png'
-
-const s__styles = require('/styles/common.sass')
-
-const $ = require('react-hyperscript')
+import s__styles from './styles.sass'
 
 const style = m__helpers.styler(s__styles)
 
@@ -48,10 +47,10 @@ export default (props: {
 		//props.image,
 		//props.type,
 		//props.url,
-		//$('link', {
-		//	rel: 'icon',
-		//	href: d__favicon,
-		//}),
+		$('link', {
+			rel: 'icon',
+			href: d__favicon,
+		}),
 		props.assets?.css.map((value) => {
 			return [
 				$('link', {

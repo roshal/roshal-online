@@ -1,13 +1,11 @@
 
-import { hot } from 'react-hot-loader/root'
-
+import $ from 'react-hyperscript'
 import * as p__react from 'pretty'
+import * as p__react_hot_loader__root from 'react-hot-loader/root'
 import * as p__react_router_dom from 'react-router-dom'
 
 import d__index from '/components/index'
 import d__pages__telegram from '/components/pages/telegram'
-
-const $ = require('react-hyperscript')
 
 interface i__props {
 	assets: {
@@ -44,4 +42,4 @@ const component: p__react.FC = (props: i__props) => {
 	][0]
 }
 
-export default hot(component)
+export default p__react_hot_loader__root.hot(component)
