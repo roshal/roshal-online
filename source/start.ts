@@ -1,7 +1,5 @@
 
 import $ from 'react-hyperscript'
-
-import * as p__url from 'url'
 import i__pretty from 'pretty'
 import i__react_dom__server from 'react-dom/server'
 
@@ -39,7 +37,6 @@ export default (locals: {
 	[key: string]: any,
 } = {}) => {
 	const assets = Object.keys(locals.webpackStats.compilation.assets).reduce((accumulator, value) => {
-		value = p__url.parse(value).pathname
 		if (value.match(/\.css$/)) {
 			accumulator.css.push(value)
 		}
