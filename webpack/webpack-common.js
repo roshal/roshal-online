@@ -57,14 +57,6 @@ module.exports = (env = {}, argv = {}) => {
 			https: argv.https,
 			port: argv.port || 1024,
 			index: '/index.html',
-			historyApiFallback: {
-				rewrites: [
-					{
-						from: /\/$/,
-						to: '/',
-					},
-				],
-			},
 			proxy: {
 				'/api/': {
 					changeOrigin: true,
