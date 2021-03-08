@@ -11,12 +11,16 @@ export const id = (() => {
 	}
 })()
 
-export const styler = (styles: {
-	[key: string]: any,
-}): any => {
+export const styler = (object: {
+	[key: string]: string,
+}) => {
 	return (...keys: string[]) => {
 		return keys.reduce((accumulator, value) => {
-			value = styles.default[value]
+			if (value in object) {
+				value = object[value]
+			} else {
+				console.info('- wrong class', value)
+			}
 			return value ? [accumulator, value].join('.') : accumulator
 		}, '')
 	}

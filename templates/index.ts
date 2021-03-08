@@ -3,10 +3,9 @@ import $ from 'react-hyperscript'
 
 import * as m__helpers from '/templates/commons/helpers'
 import d__layouts__common from '/templates/layouts/common'
+import s__styles from '/styles/common.sass'
 
 import m__format from '//modules/format'
-
-import s__styles from './styles.sass'
 
 const style = m__helpers.styler(s__styles)
 

@@ -3,8 +3,7 @@ import $ from 'react-hyperscript'
 
 import * as m__helpers from '/templates/commons/helpers'
 import d__favicon from '/assets/favicon.png'
-
-import s__styles from './styles.sass'
+import s__styles from '/styles/common.sass'
 
 const style = m__helpers.styler(s__styles)
 
