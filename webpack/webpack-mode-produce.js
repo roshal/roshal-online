@@ -1,10 +1,17 @@
 
 const r__css_minimizer_webpack_plugin = require('css-minimizer-webpack-plugin')
+const r__static_site_generator_webpack_plugin = require('static-site-generator-webpack-plugin')
 const r__terser_webpack_plugin = require('terser-webpack-plugin')
 
 module.exports = (env = {}, argv = {}) => {
 	return {
 		mode: 'production',
+		entry: {
+			start: './start.ts',
+		},
+		output: {
+			libraryTarget: 'commonjs2',
+		},
 		optimization: {
 			minimizer: [
 				new r__css_minimizer_webpack_plugin({
@@ -27,6 +34,16 @@ module.exports = (env = {}, argv = {}) => {
 				}),
 			],
 		},
+		plugins: [
+			new r__static_site_generator_webpack_plugin({
+				crawl: true,
+				entry: 'start',
+				globals: {
+					window: {},
+				},
+			}),
+		],
+		target: 'node',
 		performance: {
 			maxEntrypointSize: 128 << 12,
 			maxAssetSize: 128 << 11,

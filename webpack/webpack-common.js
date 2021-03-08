@@ -1,7 +1,6 @@
 
 const r__clean_webpack_plugin = require('clean-webpack-plugin')
 const r__path = require('path')
-const r__static_site_generator_webpack_plugin = require('static-site-generator-webpack-plugin')
 
 const m__alias = require('../alias')
 
@@ -11,17 +10,12 @@ module.exports = (env = {}, argv = {}) => {
 	return {
 		mode: 'none',
 		context: r__path.resolve('source'),
-		entry: {
-			start: './start.ts',
-		},
 		output: {
 			assetModuleFilename:env.develop ? 'assets/[name][ext]' : 'assets/[name][ext]?[hash]',
 			chunkFilename: env.develop ? '[name].js' : 'assets/[name].js?[hash]',
 			filename: env.develop ? '[name].js' : 'assets/[name].js',
-			libraryTarget: 'commonjs2',
 			path: r__path.resolve('public'),
 			publicPath: '/',
-			//	libraryTarget: 'umd',
 		},
 		resolve: {
 			alias: m__alias,
@@ -36,18 +30,14 @@ module.exports = (env = {}, argv = {}) => {
 			extensions: [
 				'.js',
 			],
+			modules: [
+				node_modules,
+			],
 		},
 		plugins: [
 			...env.WEBPACK_SERVE ? [] : [
 				new r__clean_webpack_plugin(),
 			],
-			new r__static_site_generator_webpack_plugin({
-				crawl: true,
-				entry: 'start',
-				globals: {
-					window: {},
-				},
-			}),
 		],
 		devServer: {
 			injectHot: false,
@@ -67,7 +57,6 @@ module.exports = (env = {}, argv = {}) => {
 				},
 			},
 		},
-		target: 'node',
 		watchOptions: {
 			ignored: [
 				node_modules,

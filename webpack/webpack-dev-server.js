@@ -4,14 +4,6 @@ module.exports = (env = {}, argv = {}) => {
 		devServer: {
 			compress: argv.https,
 			historyApiFallback: true,
-			//	historyApiFallback: {
-			//		rewrites: [
-			//			{
-			//				from: /\/$/,
-			//				to: '/',
-			//			},
-			//		],
-			//	},
 			host: '0.0.0.0',
 			https: argv.https,
 			index: '/index.html',
@@ -26,6 +18,14 @@ module.exports = (env = {}, argv = {}) => {
 					},
 				},
 			},
+			//	historyApiFallback: {
+			//		rewrites: [
+			//			{
+			//				from: /\/$/,
+			//				to: '/',
+			//			},
+			//		],
+			//	},
 		},
 	}
 }
