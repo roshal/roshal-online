@@ -29,26 +29,33 @@ nps.serve = {
 	produce: 'webpack serve --env produce --hot',
 }
 
+nps.watch = {
+	analyze: 'webpack --env analyze --watch',
+	develop: 'webpack --env develop --watch',
+	produce: 'webpack --env produce --watch',
+}
+
 nps.firebase = {
 	deploy: 'firebase deploy',
 	login: {
-		default: 'firebase login',
 		reauth: 'firebase login --reauth',
 	},
 	serve: 'firebase serve',
 }
 
 nps.eslint = {
-	default: 'eslint source webpack',
 	fix: 'eslint --fix source webpack',
 }
 
 nps.stylelint = {
-	default: 'stylelint styles source/**/*.sass',
 	fix: 'stylelint --fix styles source/**/*.sass',
 }
 
 nps.jest = {
-	default: 'jest source',
 	watch: 'jest --watch source',
 }
+
+nps.eslint.default = 'eslint source webpack'
+nps.firebase.login.default = 'firebase login'
+nps.jest.default = 'jest source'
+nps.stylelint.default = 'stylelint styles source/**/*.sass'
