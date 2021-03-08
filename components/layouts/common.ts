@@ -123,7 +123,7 @@ export default (props: t__props = {}) => {
 			$('footer' + style('section-footer'), [
 				$('div' + style('section-footer--container'), [
 					$('div' + style('section-footer--content'), [
-						$('div' + style('section-footer--item.social-links'), [
+						$('div' + style('section-footer--item', 'social-links'), [
 							$('div' + style('section-footer--content--l'), '1970'),
 						]),
 					]),

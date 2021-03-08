@@ -98,7 +98,7 @@ export default (props: {
 			$('footer' + style('section-footer'), [
 				$('div' + style('section-footer--container'), [
 					$('div' + style('section-footer--content'), [
-						$('div' + style('section-footer--item.social-links'), [
+						$('div' + style('section-footer--item', 'social-links'), [
 							$('div' + style('section-footer--content--l'), 'roshal'),
 							$('div' + style('section-footer--content--r'), '1337-1970'),
 						]),
