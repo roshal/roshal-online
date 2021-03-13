@@ -1,6 +1,7 @@
 
 const r__clean_webpack_plugin = require('clean-webpack-plugin')
 const r__path = require('path')
+const r__webpack_config_dump_plugin = require('webpack-config-dump-plugin')
 
 const m__alias = require('../alias')
 
@@ -43,6 +44,11 @@ module.exports = (env = {}, argv = {}) => {
 			...env.WEBPACK_SERVE ? [] : [
 				new r__clean_webpack_plugin(),
 			],
+			...env.dump ? [
+				new r__webpack_config_dump_plugin.WebpackConfigDumpPlugin({
+					name: 'webpack.config.dump.js',
+				}),
+			] : [],
 		],
 		devServer: {
 			injectHot: false,

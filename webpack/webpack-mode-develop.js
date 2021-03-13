@@ -6,10 +6,10 @@ module.exports = (env = {}, argv = {}) => {
 		mode: 'development',
 		devtool: 'source-map',
 		entry: {
-			entry: './entry.ts',
+			entry: './entries/entry.ts',
 		},
 		plugins: [
-			new r__react_refresh_webpack_plugin(),
+			//	new r__react_refresh_webpack_plugin(),
 		],
 	}
 }

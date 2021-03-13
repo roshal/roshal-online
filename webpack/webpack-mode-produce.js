@@ -7,7 +7,7 @@ module.exports = (env = {}, argv = {}) => {
 	return {
 		mode: 'production',
 		entry: {
-			start: './start.ts',
+			start: './entries/start.ts',
 		},
 		output: {
 			libraryTarget: 'commonjs2',
