@@ -11,8 +11,8 @@ module.exports = (env = {}, argv = {}) => {
 		mode: 'none',
 		output: {
 			assetModuleFilename: env.develop ? '[file]' : 'assets/[file]?[fullhash]',
-			chunkFilename: env.develop ? '[name].js' : 'chunks/[name].js?[chunkhash]',
-			filename: env.develop ? '[name].js' : 'modules/[name].js?[hash]',
+			chunkFilename: env.develop ? '[name].js' : 'chunks/[name].js?[fullhash]',
+			filename: env.develop ? '[name].js' : 'modules/[name].js',
 			path: r__path.resolve('public'),
 			publicPath: '/',
 		},
