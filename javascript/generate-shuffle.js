@@ -15,19 +15,11 @@ module.exports = (string = letters, join = (value) => {
 	return value
 }) => {
 	const limit = string.length
-	const length = symbols.length
 	return (context, mask, name) => {
 		const path = r__path.relative(context.context, context.resource)
-		const data = [path, name].join('.').split('')
-		const sequence = data.reduce((accumulator, value, index) => {
-			value = length ** index * symbols.indexOf(value)
-			for (let key = 0; value; key += 1) {
-				value += accumulator[key] || 0
-				accumulator[key] = value % limit
-				value = Math.floor(value / limit)
-			}
-			return accumulator
-		}, [])
+		const sequence = [path, name].join('').split('').map((value) => {
+			return symbols.indexOf(value)
+		})
 		const array = string.split('')
 		const key = sequence.reduce((accumulator, value) => {
 			return accumulator.splice(value % limit, 1).concat(accumulator)
