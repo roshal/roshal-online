@@ -17,7 +17,7 @@ module.exports = (string = letters, join = (value) => {
 	const limit = string.length
 	const length = symbols.length
 	return (context, mask, name) => {
-		const path = r__path.relative(context.rootContext, context.context)
+		const path = r__path.relative(context.context, context.resource)
 		const data = [path, name].join('.').split('')
 		const sequence = data.reduce((accumulator, value, index) => {
 			value = length ** index * symbols.indexOf(value)

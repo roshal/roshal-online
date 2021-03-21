@@ -27,9 +27,11 @@ module.exports = (env = {}, argv = {}) => {
 					modules: {
 						...env.develop ? {
 							getLocalIdent: m__generate_shuffle.numbers,
+							//	localIdentName: '[local]------[name]--[hash:base26]',
 						} : {},
 						...env.produce ? {
 							getLocalIdent: m__generate_shuffle.uniques,
+							//	localIdentName: '[hash:base26]',
 						} : {},
 					},
 					importLoaders: 1,
