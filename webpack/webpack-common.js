@@ -3,33 +3,33 @@ const r__clean_webpack_plugin = require('clean-webpack-plugin')
 const r__path = require('path')
 const r__webpack_config_dump_plugin = require('webpack-config-dump-plugin')
 
-const m__alias = require('../alias')
-
 const node_modules = r__path.resolve('node_modules')
 
 module.exports = (env = {}, argv = {}) => {
 	return {
-		mode: 'none',
 		context: r__path.resolve('source'),
+		mode: 'none',
 		output: {
-			assetModuleFilename:env.develop ? 'assets/[name][ext]' : 'assets/[name][ext]?[hash]',
-			chunkFilename: env.develop ? '[name].js' : 'assets/[id].js?[hash]',
-			filename: env.develop ? '[name].js' : 'assets/[name].js',
+			assetModuleFilename: env.develop ? '[file]' : 'assets/[file]?[fullhash]',
+			chunkFilename: env.develop ? '[name].js' : 'chunks/[name].js?[chunkhash]',
+			filename: env.develop ? '[name].js' : 'modules/[name].js?[hash]',
 			path: r__path.resolve('public'),
 			publicPath: '/',
 		},
 		resolve: {
 			alias: {
-				...m__alias,
 				...argv.hot ? {
 					'react-dom': '@hot-loader/react-dom',
 				} : {},
 			},
 			extensions: [
-				'.js', '.ts',
+				'.js',
 			],
 			modules: [
 				node_modules,
+			],
+			roots: [
+				r__path.resolve(),
 			],
 		},
 		resolveLoader: {
@@ -46,28 +46,11 @@ module.exports = (env = {}, argv = {}) => {
 			],
 			...env.dump ? [
 				new r__webpack_config_dump_plugin.WebpackConfigDumpPlugin({
+					depth: 9,
 					name: 'webpack.config.dump.js',
 				}),
 			] : [],
 		],
-		devServer: {
-			injectHot: false,
-			compress: argv.https,
-			historyApiFallback: true,
-			host: '0.0.0.0',
-			https: argv.https,
-			port: argv.port || 1024,
-			index: '/index.html',
-			proxy: {
-				'/api/': {
-					changeOrigin: true,
-					target: '//localhost:2048',
-					pathRewrite: {
-						'^/api/': '/',
-					},
-				},
-			},
-		},
 		watchOptions: {
 			ignored: [
 				node_modules,
@@ -79,6 +62,9 @@ module.exports = (env = {}, argv = {}) => {
 			assetFilter: (asset) => {
 				return asset.endsWith('.js')
 			},
+		},
+		stats: {
+			children: true,
 		},
 		experiments: {
 			asset: true,

@@ -30,7 +30,6 @@ module.exports = (string = letters, join = (value) => {
 			}
 			return accumulator
 		}, array)
-		console.log(value)
 		array = string.split('')
 		value = value.reduce((accumulator, value) => {
 			return accumulator.splice(value % limit, 1).concat(accumulator)
@@ -39,24 +38,20 @@ module.exports = (string = letters, join = (value) => {
 	}
 }
 
-const join = (value, name) => {
-	return [name, value].join('--')
-}
-
-const join_az = (value, name) => {
-	return ['az', value].join('')
-}
-
-const create = (string) => {
-	const handle = (join = join) => {
+const create = (string, join) => {
+	const handle = module.exports(string, join)
+	handle.handle = (join) => {
 		return module.exports(string, join)
 	}
-	handle.handle = handle(numbers)
 	return handle
 }
 
-// az0123456789
-module.exports.numbers = create(numbers)
+// a0123456789z
+module.exports.numbers = create(numbers, (value) => {
+	return ['a', value, 'z'].join('')
+})
 
 // abcdefghijklmnopqrstuvwxyz
-module.exports.letters = create(letters)
+module.exports.letters = create(letters, (value, name) => {
+	return [name, value].join('--')
+})

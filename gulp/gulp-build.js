@@ -18,7 +18,7 @@ const task = (name, include, color, paths, flags = {
 	observe: minimist.observe,
 }, options = {
 	ignoreInitial: false,
-	persistent: !!flags.observe,
+	persistent: flags.observe == true,
 }) => {
 	r__gulp.task(name, (callback) => {
 		const run = include()

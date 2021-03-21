@@ -6,7 +6,6 @@ module.exports = (env = {}, argv = {}) => {
 		require('./webpack-common'),
 		require('./webpack-dev-server'),
 		require('./webpack-module-assets'),
-		require('./webpack-module-babel'),
 		require('./webpack-module-sass'),
 		require('./webpack-module-typescript'),
 		env.analyze && require('./webpack-mode-analyze'),

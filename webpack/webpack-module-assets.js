@@ -11,7 +11,7 @@ module.exports = (env = {}, argv = {}) => {
 			r__path.resolve('assets'),
 		],
 		generator: {
-			filename: env.develop ? '[path][name][ext]' : 'assets/[path][name][ext]?[hash]',
+			filename: env.develop ? '[file]' : 'assets/[file]?[hash]',
 		},
 		type: 'asset/resource',
 	})
@@ -21,7 +21,7 @@ module.exports = (env = {}, argv = {}) => {
 			r__path.resolve('images'),
 		],
 		generator: {
-			filename: env.develop ? 'assets/[path][name][ext]' : 'assets/[path][name][ext]?[hash]',
+			filename: env.develop ? 'assets/[file]' : 'assets/[file]?[hash]',
 		},
 		type: 'asset',
 	})

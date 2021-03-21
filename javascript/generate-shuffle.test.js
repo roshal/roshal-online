@@ -1,5 +1,5 @@
 
-const m__generate_name = require('./name-generator')
+const m__generate_name = require('./generate-shuffle')
 
 test(m__generate_name.name, () => {
 	const map = m__generate_name(10)

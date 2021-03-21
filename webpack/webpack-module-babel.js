@@ -7,7 +7,7 @@ module.exports = (env = {}, argv = {}) => {
 
 	rules.push({
 		test: [
-			/\.ts$/,
+			/\.[jt]s$/,
 		],
 		include: [
 			r__path.resolve('commons'),
@@ -16,24 +16,22 @@ module.exports = (env = {}, argv = {}) => {
 		],
 		resolve: {
 			extensions: [
-				'.js', '.ts',
+				'.ts', '.js',
 			],
 		},
 		use: [
 			{
 				loader: 'babel-loader',
 				options: {
-					cacheDirectory: true,
-					// context: r__path.resolve(),
+					cacheDirectory: env.WEBPACK_SERVE,
 				},
 			},
 			{
 				loader: 'ts-loader',
 				options: {
-					// context: r__path.resolve(),
-					configFile: 'tsconfig.json',
+					configFile: r__path.resolve('tsconfig.json'),
 					compilerOptions: {
-						sourceMap: !!env.develop,
+						sourceMap: env.develop,
 					},
 				},
 			},

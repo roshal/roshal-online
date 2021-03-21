@@ -1,4 +1,5 @@
 
+const r__fork_ts_checker_webpack_plugin = require('fork-ts-checker-webpack-plugin')
 const r__path = require('path')
 
 module.exports = (env = {}, argv = {}) => {
@@ -16,17 +17,17 @@ module.exports = (env = {}, argv = {}) => {
 		],
 		resolve: {
 			extensions: [
-				'.js', '.ts',
+				'.ts', '.js',
 			],
 		},
 		use: [
 			{
 				loader: 'ts-loader',
 				options: {
-					context: r__path.resolve(),
-					configFile: 'tsconfig.json',
+					transpileOnly: true,
+					configFile: r__path.resolve('tsconfig.json'),
 					compilerOptions: {
-						sourceMap: !!env.develop,
+						sourceMap: env.develop,
 					},
 				},
 			},
@@ -37,6 +38,13 @@ module.exports = (env = {}, argv = {}) => {
 		module: {
 			rules,
 		},
+		plugins: [
+			new r__fork_ts_checker_webpack_plugin({
+				typescript: {
+					configFile: r__path.resolve('tsconfig.json'),
+				},
+			}),
+		],
 	}
 
 }

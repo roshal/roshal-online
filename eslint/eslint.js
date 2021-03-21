@@ -12,7 +12,7 @@ exports.rules = {
 	/* stylistic-issues */
 	'comma-dangle': ['error', 'always-multiline'],
 	'indent': ['error', 'tab'],
-	'linebreak-style': ['error', 'unix'],
+	'linebreak-style': ['error'],
 	'new-parens': ['error'],
 	'no-mixed-spaces-and-tabs': ['error'],
 	/* plugin:import */

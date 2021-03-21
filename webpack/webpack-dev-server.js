@@ -7,7 +7,6 @@ module.exports = (env = {}, argv = {}) => {
 			host: '0.0.0.0',
 			https: argv.https,
 			index: '/index.html',
-			injectHot: false,
 			port: argv.port || 1024,
 			proxy: {
 				'/api/': {
@@ -18,6 +17,7 @@ module.exports = (env = {}, argv = {}) => {
 					},
 				},
 			},
+			//	injectHot: false,
 			//	historyApiFallback: {
 			//		rewrites: [
 			//			{

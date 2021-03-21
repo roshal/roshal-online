@@ -3,7 +3,7 @@ export const id = (() => {
 	let index = 0
 	const map = new Map()
 	return (key: any) => {
-		if (!map.has(key)) {
+		if (map.has(key) == false) {
 			index += 1
 			map.set(key, index)
 		}

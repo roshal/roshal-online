@@ -5,10 +5,10 @@ const r__terser_webpack_plugin = require('terser-webpack-plugin')
 
 module.exports = (env = {}, argv = {}) => {
 	return {
-		mode: 'production',
 		entry: {
 			start: './entries/start.ts',
 		},
+		mode: 'production',
 		output: {
 			libraryTarget: 'commonjs2',
 		},
