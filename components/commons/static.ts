@@ -1,12 +1,13 @@
 
 import * as p__react from 'react'
 import * as p__react_dom__server from 'react-dom/server'
-import i__pretty from 'pretty'
 
 //	import '//trackers/google-analytics'
 //	import '//trackers/yandex-metrika'
 
 import d__router from './router'
+
+const r__pretty = require('pretty')
 
 interface i__props {
 	assets: {
@@ -19,14 +20,13 @@ const render = (locals: {
 }, component: p__react.FC<{
 	[key: string]: any,
 }>, props: i__props) => {
-	console.log(9876543210, locals)
 	const element = component({
 		assets: props.assets,
 		path: locals.path,
 	})
 	const html = p__react_dom__server.renderToStaticMarkup(element)
 	const markup = ['<!DOCTYPE html>', html].join('')
-	return process.env.NODE_ENV === 'production' ? markup : i__pretty(markup, {
+	return process.env.NODE_ENV === 'production' ? markup : r__pretty(markup, {
 		ocd: true,
 	})
 }

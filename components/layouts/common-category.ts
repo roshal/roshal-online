@@ -1,35 +1,45 @@
 
 import * as $ from 'react-hyperscript'
+import * as p__react from 'react'
 
 import * as m__helpers from '/commons/helpers'
 import d__layouts__common from '/components/layouts/common'
-
-import s__styles from './styles.sass'
+import s__styles from '/styles/common.sass'
 
 const style = m__helpers.styler(s__styles)
 
-export default (props) => {
-	return [
+const component: p__react.FC<{
+	title: string,
+}> = (props) => {
+	return $([
 		$(d__layouts__common, {
 			title: props.title + ' &mdash; Аренда в Санкт-Петербурге',
 		}, [
-			table(props),
+			$(table, {
+				...props,
+			}),
 		]),
-	]
+	])
 }
 
-const table = (props) => {
-	if (!props.properties && !props.items) {
+export default component
+
+const table: p__react.FC<{
+	items?: any,
+	properties?: any,
+	title: string,
+}> = (props) => {
+	if (props.properties == false && props.items == false) {
 		return
 	}
-	return [
+	return $([
 		$('div' + style('block_scroll'), [
 			$('div' + style('block_scroll-content'), [
 				$('table' + style('table', 'block_scroll-table'), [
-					props.roperties && [
+					props.properties && [
 						$('tr' + style('table-row'), [
 							$('th' + style('table-cell', 'table-cell--header'), 'Название'),
-							...props.roperties?.map((value) => {
+							...props.properties?.map((value) => {
 								return [
 									$('th' + style('table-cell', 'table-cell--header'), value),
 								]
@@ -57,5 +67,5 @@ const table = (props) => {
 				]),
 			]),
 		]),
-	]
+	])
 }

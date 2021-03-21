@@ -1,9 +1,9 @@
 
 import * as $ from 'react-hyperscript'
+import * as p__react from 'react'
 
 import * as m__helpers from '/commons/helpers'
-
-import s__styles from './styles.sass'
+import s__styles from '/styles/common.sass'
 
 const style = m__helpers.styler(s__styles)
 
@@ -23,8 +23,8 @@ const c__og = (props) => {
 	})
 }
 
-export default (props = {}) => {
-	return [
+const component: p__react.FC = (props = {}) => {
+	return $([
 		$('header' + style('section-header'), [
 			$('div' + style('section-header--container'), [
 				$('div' + style('section-header--content'), [
@@ -39,5 +39,7 @@ export default (props = {}) => {
 				]),
 			]),
 		]),
-	]
+	])
 }
+
+export default component

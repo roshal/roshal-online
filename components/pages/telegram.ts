@@ -1,19 +1,22 @@
 
 import * as $ from 'react-hyperscript'
+import * as p__react from 'react'
 
 import * as m__helpers from '/commons/helpers'
 import d__layouts__common from '/components/layouts/common'
-
-import s__styles from './styles.sass'
+import s__styles from '/styles/common.sass'
 
 const style = m__helpers.styler(s__styles)
 
-export default (props: {
-	blocks: {
+const component: p__react.FC<{
+	assets?: {
+		css: string[], js: string[],
+	},
+	blocks?: {
 		section: any,
 	},
-}) => {
-	return [
+}> = (props) => {
+	return $([
 		$(d__layouts__common, {
 			title: 'roshal',
 			description: 'developer from saint-petersburg',
@@ -29,5 +32,7 @@ export default (props: {
 			//	]),
 			//]),
 		]),
-	]
+	])
 }
+
+export default component

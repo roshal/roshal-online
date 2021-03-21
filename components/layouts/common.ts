@@ -1,30 +1,35 @@
 
 import * as $ from 'react-hyperscript'
+import * as p__react from 'react'
 
 import * as m__helpers from '/commons/helpers'
 import d__favicon from '/assets/favicon.png'
-
-import s__styles from './styles.sass'
+import s__styles from '/styles/common.sass'
 
 const style = m__helpers.styler(s__styles)
 
-const c__og = (props) => {
+const c__og: p__react.FC<{
+	og: any,
+}> = (props) => {
 	if (props.og == null) {
 		return null
 	}
-	return ['description', 'image', 'title', 'type', 'url'].map((value) => {
-		return [
-			props.og?.[value] && [
-				$('meta', {
-					property: ['og', value].join(':'),
-					content: props.og?.[value],
-				}),
-			],
-		]
-	})
+	const array = ['description', 'image', 'title', 'type', 'url']
+	return $([
+		...array.map((value) => {
+			return $([
+				...props.og?.[value] ? [
+					$('meta', {
+						property: ['og', value].join(':'),
+						content: props.og?.[value],
+					}),
+				] : [],
+			])
+		}),
+	])
 }
 
-interface t__props {
+const component: p__react.FC<{
 	assets?: {
 		css: string[],
 		js: string[],
@@ -34,9 +39,7 @@ interface t__props {
 	keywords?: string[],
 	og?: {},
 	title?: string,
-}
-
-export default (props: t__props = {}) => {
+}> = (props) => {
 	const head = [
 		$('meta', {
 			charSet: 'UTF-8',
@@ -45,18 +48,18 @@ export default (props: t__props = {}) => {
 			name: 'viewport',
 			content: 'width=device-width',
 		}),
-		props.title && [
+		...props.title && [
 			$('title', [
 				props.title,
 			]),
 		],
-		props.description && [
+		...props.description && [
 			$('meta', {
 				name: 'description',
 				content: props.description,
 			}),
 		],
-		props.keywords?.length && [
+		...props.keywords?.length && [
 			$('meta', {
 				name: 'keywords',
 				content: props.keywords?.join(', '),
@@ -131,7 +134,7 @@ export default (props: t__props = {}) => {
 			]),
 		]),
 	]
-	return [
+	return $([
 		$('html', {
 			lang: 'ru',
 			prefix: 'og: http://ogp.me/ns#',
@@ -139,5 +142,7 @@ export default (props: t__props = {}) => {
 			$('head', head),
 			$('body', body),
 		]),
-	]
+	])
 }
+
+export default component
