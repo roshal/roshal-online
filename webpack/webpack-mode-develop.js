@@ -4,10 +4,10 @@ const r__path = require('path')
 
 module.exports = (env = {}, argv = {}) => {
 	return {
-		mode: 'development',
 		entry: {
 			entry: './entries/entry.ts',
 		},
+		mode: 'development',
 		optimization: {
 			runtimeChunk: 'single',
 		},
