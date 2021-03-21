@@ -17,11 +17,9 @@ module.exports = (string = letters, join = (value) => {
 	const limit = string.length
 	const length = symbols.length
 	return (context, mask, name) => {
-		let array, value
-		value = r__path.relative(context.rootContext, context.context)
-		value = [value, name].join('.').split('')
-		array = []
-		value = value.reduce((accumulator, value, index) => {
+		const path = r__path.relative(context.rootContext, context.context)
+		const data = [path, name].join('.').split('')
+		const sequence = data.reduce((accumulator, value, index) => {
 			value = length ** index * symbols.indexOf(value)
 			for (let key = 0; value; key += 1) {
 				value += accumulator[key] || 0
@@ -29,16 +27,18 @@ module.exports = (string = letters, join = (value) => {
 				value = Math.floor(value / limit)
 			}
 			return accumulator
-		}, array)
-		array = string.split('')
-		value = value.reduce((accumulator, value) => {
+		}, [])
+		const array = string.split('')
+		const key = sequence.reduce((accumulator, value) => {
 			return accumulator.splice(value % limit, 1).concat(accumulator)
 		}, array).join('')
-		return join(value, name)
+		return join(key, name)
 	}
 }
 
-const create = (string, join) => {
+const create = (string, join = (key, name) => {
+	return [name, key].join('--')
+}) => {
 	const handle = module.exports(string, join)
 	handle.handle = (join) => {
 		return module.exports(string, join)
@@ -46,12 +46,11 @@ const create = (string, join) => {
 	return handle
 }
 
-// a0123456789z
-module.exports.numbers = create(numbers, (value) => {
-	return ['a', value, 'z'].join('')
-})
+// name--0123456789
+module.exports.numbers = create(numbers)
+
+// name--abcdefghijklmnopqrstuvwxyz
+module.exports.letters = create(letters)
 
 // abcdefghijklmnopqrstuvwxyz
-module.exports.letters = create(letters, (value, name) => {
-	return [name, value].join('--')
-})
+module.exports.uniques = module.exports()

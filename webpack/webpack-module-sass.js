@@ -29,7 +29,7 @@ module.exports = (env = {}, argv = {}) => {
 							getLocalIdent: m__generate_shuffle.numbers,
 						} : {},
 						...env.produce ? {
-							getLocalIdent: m__generate_shuffle.letters,
+							getLocalIdent: m__generate_shuffle.uniques,
 						} : {},
 					},
 					importLoaders: 1,
