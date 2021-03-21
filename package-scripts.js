@@ -15,7 +15,7 @@ nps.test = series('jest')
 
 nps.clean = 'rimraf public/*'
 
-nps.nodemon = 'nodemon -e js -w webpack -x webpack serve --env develop --hot'
+nps.nodemon = 'nodemon -e js -w webpack -x webpack serve --env develop --env dump --hot'
 
 nps.build = {
 	analyze: 'webpack --env analyze',
