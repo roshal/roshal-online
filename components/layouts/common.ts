@@ -108,13 +108,7 @@ const component: p__react.FC<{
 						$('ul' + style('section-header--list'), [
 							$('li' + style('section-header--list-item'), [
 								$('a', {
-									href: '/',
-									title: 'roshal',
-								}, 'root'),
-							]),
-							$('li' + style('section-header--list-item'), [
-								$('a', {
-									href: 'https:t.me/roshal',
+									href: '//t.me/roshal',
 									title: 'telegram',
 								}, 'telegram'),
 							]),
