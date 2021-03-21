@@ -42,7 +42,7 @@ module.exports = (env = {}, argv = {}) => {
 		},
 		plugins: [
 			...env.WEBPACK_SERVE ? [] : [
-				new r__clean_webpack_plugin(),
+				new r__clean_webpack_plugin.CleanWebpackPlugin(),
 			],
 			...env.dump ? [
 				new r__webpack_config_dump_plugin.WebpackConfigDumpPlugin({
