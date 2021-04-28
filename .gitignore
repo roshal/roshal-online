@@ -33,3 +33,9 @@
 !/postcss.config.js
 !/tsconfig.json
 !/webpack.config.js
+
+!/.vscode/
+
+/.vscode/*
+
+!/.vscode/settings.json
