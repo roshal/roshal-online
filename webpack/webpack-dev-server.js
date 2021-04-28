@@ -17,15 +17,15 @@ module.exports = (env = {}, argv = {}) => {
 					},
 				},
 			},
-			//	injectHot: false,
-			//	historyApiFallback: {
-			//		rewrites: [
-			//			{
-			//				from: /\/$/,
-			//				to: '/',
-			//			},
-			//		],
-			//	},
+			//injectHot: false,
+			//historyApiFallback: {
+			//	rewrites: [
+			//		{
+			//			from: /\/$/,
+			//			to: '/',
+			//		},
+			//	],
+			//},
 		},
 	}
 }

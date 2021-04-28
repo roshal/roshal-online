@@ -25,14 +25,14 @@ function box(con, color, top, bottom, left, right) {
 	con.fill();
 }
 function launch_html5() {
-//	поддержка тегов html5
+	// поддержка тегов html5
 	html5 = Array ('article', 'aside', 'figcaption', 'figure', 'footer', 'header', 'hgroup', 'nav', 'section', 'time');
 	for (var i = 0; i < html5.length; i++) {
 		document.createElement(html5[i]);
 	}
 }
 function addHandler(object, event, handler, useCapture) {
-//	функция для добавления обработчика событий
+	// функция для добавления обработчика событий
 	if (object.addEventListener) {
 		object.addEventListener(event, handler, useCapture ? useCapture : false);
 	} else if (object.attachEvent) {

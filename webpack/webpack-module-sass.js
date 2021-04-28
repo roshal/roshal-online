@@ -27,11 +27,11 @@ module.exports = (env = {}, argv = {}) => {
 					modules: {
 						...env.develop ? {
 							getLocalIdent: m__generate_shuffle.numbers,
-							//	localIdentName: '[local]------[name]--[hash:base26]',
+							//localIdentName: '[local]------[name]--[hash:base26]',
 						} : {},
 						...env.produce ? {
 							getLocalIdent: m__generate_shuffle.uniques,
-							//	localIdentName: '[hash:base26]',
+							//localIdentName: '[hash:base26]',
 						} : {},
 					},
 					importLoaders: 1,
@@ -62,7 +62,7 @@ module.exports = (env = {}, argv = {}) => {
 		plugins: [
 			new r__mini_css_extract_plugin({
 				filename: env.develop ? '[name].css' : 'styles/[name].css',
-				//	ignoreOrder: true,
+				//ignoreOrder: true,
 			}),
 		],
 	}

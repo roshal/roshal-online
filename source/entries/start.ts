@@ -1,6 +1,6 @@
 
-//	import '//trackers/google-analytics'
-//	import '//trackers/yandex-metrika'
+//import '//trackers/google-analytics'
+//import '//trackers/yandex-metrika'
 
 import * as $ from 'react-hyperscript'
 import * as p__react from 'react'
