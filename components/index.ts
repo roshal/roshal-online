@@ -14,6 +14,7 @@ const component: p__react.FC<{
 		css: string[], js: string[],
 	},
 }> = (props) => {
+
 	return $([
 		$(d__layouts__common, {
 			assets: props.assets,
@@ -119,6 +120,7 @@ const component: p__react.FC<{
 			]),
 		]),
 	])
+
 }
 
 export default component

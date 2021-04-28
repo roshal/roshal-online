@@ -7,23 +7,33 @@ import s__styles from '/styles/common.sass'
 
 const style = m__helpers.styler(s__styles)
 
-const c__og = (props) => {
+const c__og: p__react.FC<{
+	og?: Record<string, string>,
+}> = (props) => {
+
 	if (props.og == null) {
 		return null
 	}
-	return ['description', 'image', 'title', 'type', 'url'].map((value) => {
-		return [
-			props.og['value'] && [
-				$('meta', {
-					property: ['og', value].join(':'),
-					content: props.og[value],
-				}),
-			],
-		]
-	})
+
+	const array = ['description', 'image', 'title', 'type', 'url']
+
+	return $([
+		...array.map((value) => {
+			return $([
+				...props.og?.[value] ? [
+					$('meta', {
+						property: ['og', value].join(':'),
+						content: props.og[value],
+					}),
+				] : [],
+			])
+		}),
+	])
+
 }
 
 const component: p__react.FC = (props = {}) => {
+
 	return $([
 		$('header' + style('section-header'), [
 			$('div' + style('section-header--container'), [
@@ -40,6 +50,7 @@ const component: p__react.FC = (props = {}) => {
 			]),
 		]),
 	])
+
 }
 
 export default component

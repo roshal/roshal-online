@@ -11,10 +11,13 @@ const style = m__helpers.styler(s__styles)
 const c__og: p__react.FC<{
 	og: any,
 }> = (props) => {
+
 	if (props.og == null) {
 		return null
 	}
+
 	const array = ['description', 'image', 'title', 'type', 'url']
+
 	return $([
 		...array.map((value) => {
 			return $([
@@ -27,6 +30,7 @@ const c__og: p__react.FC<{
 			])
 		}),
 	])
+
 }
 
 const component: p__react.FC<{
@@ -40,6 +44,7 @@ const component: p__react.FC<{
 	og?: {},
 	title?: string,
 }> = (props) => {
+
 	const head = [
 		$('meta', {
 			charSet: 'UTF-8',
@@ -100,6 +105,7 @@ const component: p__react.FC<{
 			og: props.og,
 		}),
 	]
+
 	const body = [
 		$('div' + style('page'), [
 			$('header' + style('section-header'), [
@@ -128,6 +134,7 @@ const component: p__react.FC<{
 			]),
 		]),
 	]
+
 	return $([
 		$('html', {
 			lang: 'ru',
@@ -137,6 +144,7 @@ const component: p__react.FC<{
 			$('body', body),
 		]),
 	])
+
 }
 
 export default component

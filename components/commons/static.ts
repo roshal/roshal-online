@@ -2,8 +2,8 @@
 import * as p__react from 'react'
 import * as p__react_dom__server from 'react-dom/server'
 
-//	import '//trackers/google-analytics'
-//	import '//trackers/yandex-metrika'
+//import '//trackers/google-analytics'
+//import '//trackers/yandex-metrika'
 
 import d__router from './router'
 

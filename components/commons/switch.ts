@@ -14,6 +14,7 @@ const component: p__react.FC<{
 		path?: string,
 	},
 }> = (props) => {
+
 	return $([
 		$(p__react_router_dom.Switch, [
 			$(p__react_router_dom.Route, {
@@ -33,6 +34,7 @@ const component: p__react.FC<{
 			]),
 		]),
 	])
+
 }
 
 export default component

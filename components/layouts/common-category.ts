@@ -11,6 +11,7 @@ const style = m__helpers.styler(s__styles)
 const component: p__react.FC<{
 	title: string,
 }> = (props) => {
+
 	return $([
 		$(d__layouts__common, {
 			title: props.title + ' &mdash; Аренда в Санкт-Петербурге',
@@ -20,6 +21,7 @@ const component: p__react.FC<{
 			}),
 		]),
 	])
+
 }
 
 export default component
@@ -29,9 +31,11 @@ const table: p__react.FC<{
 	properties?: any,
 	title: string,
 }> = (props) => {
+
 	if (props.properties == false && props.items == false) {
 		return
 	}
+
 	return $([
 		$('div' + style('block_scroll'), [
 			$('div' + style('block_scroll-content'), [
@@ -68,4 +72,5 @@ const table: p__react.FC<{
 			]),
 		]),
 	])
+
 }

@@ -10,11 +10,13 @@ const component: p__react.FC<{
 	},
 	path?: string,
 }> = (props = {}) => {
+
 	return $([
 		$(d__router, {
 			...props,
 		}),
 	])
+
 }
 
 export default component

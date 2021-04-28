@@ -9,6 +9,7 @@ import s__styles from '/styles/common.sass'
 const style = m__helpers.styler(s__styles)
 
 const component: p__react.FC = (props = {}) => {
+
 	return $([
 		$(d__layouts__common, {
 			title: 'error',
@@ -25,6 +26,7 @@ const component: p__react.FC = (props = {}) => {
 			]),
 		]),
 	])
+
 }
 
 export default component

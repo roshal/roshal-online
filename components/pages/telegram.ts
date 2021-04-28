@@ -16,6 +16,7 @@ const component: p__react.FC<{
 		section: any,
 	},
 }> = (props) => {
+
 	return $([
 		$(d__layouts__common, {
 			title: 'roshal',
@@ -33,6 +34,7 @@ const component: p__react.FC<{
 			//]),
 		]),
 	])
+
 }
 
 export default component

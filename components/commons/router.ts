@@ -12,7 +12,8 @@ const component: p__react.FC<{
 	},
 	path?: string,
 }> = (props) => {
-	return [
+
+	return $([
 		$(p__react_router_dom.StaticRouter, {
 			location: props.path,
 			//history: history.createBrowserHistory(),
@@ -21,7 +22,8 @@ const component: p__react.FC<{
 				head: props,
 			}),
 		]),
-	][0]
+	])
+
 }
 
 export default p__react_hot_loader__root.hot(component)
