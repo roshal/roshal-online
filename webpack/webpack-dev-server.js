@@ -1,5 +1,6 @@
 
 module.exports = (env = {}, argv = {}) => {
+
 	return {
 		devServer: {
 			compress: argv.https,
@@ -28,4 +29,5 @@ module.exports = (env = {}, argv = {}) => {
 			//},
 		},
 	}
+
 }

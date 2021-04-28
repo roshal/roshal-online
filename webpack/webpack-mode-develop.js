@@ -4,6 +4,7 @@ const r__path = require('path')
 const r__react_refresh_webpack_plugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 module.exports = (env = {}, argv = {}) => {
+
 	return {
 		entry: {
 			entry: './entries/entry.ts',
@@ -30,4 +31,5 @@ module.exports = (env = {}, argv = {}) => {
 		],
 		devtool: 'source-map',
 	}
+
 }

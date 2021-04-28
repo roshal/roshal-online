@@ -4,6 +4,7 @@ const r__static_site_generator_webpack_plugin = require('static-site-generator-w
 const r__terser_webpack_plugin = require('terser-webpack-plugin')
 
 module.exports = (env = {}, argv = {}) => {
+
 	return {
 		entry: {
 			start: './entries/start.ts',
@@ -52,4 +53,5 @@ module.exports = (env = {}, argv = {}) => {
 			},
 		},
 	}
+
 }
