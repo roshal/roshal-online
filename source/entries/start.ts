@@ -1,12 +1,12 @@
 
-//import '//trackers/google-analytics'
-//import '//trackers/yandex-metrika'
+//import '/source/trackers/google-analytics'
+//import '/source/trackers/yandex-metrika'
 
 import * as $ from 'react-hyperscript'
 import * as p__react from 'react'
 import * as p__react_dom__server from 'react-dom/server'
 
-import m__index from '/components/index'
+import m__index from '/components/az'
 
 const r__pretty = require('pretty')
 

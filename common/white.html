@@ -2,25 +2,28 @@
 <html>
 	<head>
 		<style>
+			:root {
+				--color: #fff;
+				--index: 4px;
+				--value: 68px;
+			}
 			html {
 				height: 100%;
 				background-color: black;
 				background-image:
 				repeating-linear-gradient(0deg
-					, #fff 0px
-					, #fff 8px
-					, transparent 8px
-					, transparent 56px
+					, var(--color) 0
+					, var(--color) var(--index)
+					, transparent var(--index)
+					, transparent var(--value)
 				),
-				repeating-linear-gradient(90deg
-					, #000 0px
-					, #000 8px
-					, transparent 8px
-					, transparent 56px
-				),
+				/*repeating-linear-gradient(90deg*/
+				/*	, var(--color) 0*/
+				/*	, var(--color) var(--index)*/
+				/*	, transparent var(--index)*/
+				/*	, transparent var(--value)*/
+				/*),*/
 				none;
-				height: 100%;
-				margin: 0;
 			}
 		</style>
 	</head>

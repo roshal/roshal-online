@@ -55,6 +55,12 @@ nps.jest = {
 	watch: 'jest --watch source',
 }
 
+nps.typescript = {
+	check: 'tsc',
+	print: 'tsc --showConfig',
+	trace: 'tsc --traceResolution',
+}
+
 nps.eslint.default = 'eslint source webpack'
 nps.firebase.login.default = 'firebase login'
 nps.jest.default = 'jest source'

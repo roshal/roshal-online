@@ -1,15 +1,18 @@
 {
 	"compilerOptions": {
+		"alwaysStrict": true,
 		"baseUrl": ".",
+		"incremental": true,
+		"isolatedModules": true,
 		"moduleResolution": "node",
+		"noImplicitThis": true,
 		"outDir": "output",
-		"paths": {
-			"/*": ["*"],
-			"//*": ["source/*"],
-		},
+		"paths": {"/*": ["*"]},
 		"removeComments": true,
+		"strictBindCallApply": true,
+		"strictFunctionTypes": true,
 		"target": "esnext",
-		"typeRoots": ["./node_modules/@types", "./typings"],
+		"typeRoots": ["node_modules/@types", "typings"],
 	},
-	"include": ["commons", "components", "source", "typings"],
+	"exclude": ["node_modules", "templates"],
 }

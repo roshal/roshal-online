@@ -11,7 +11,7 @@ export const id = (() => {
 	}
 })()
 
-export const styler = (object: {
+export const stylize = (object: {
 	[key: string]: string,
 }) => {
 	return (...keys: string[]) => {
@@ -24,4 +24,10 @@ export const styler = (object: {
 			return value ? [accumulator, value].join('.') : accumulator
 		}, '')
 	}
+}
+
+export const style = (...values: string[]) => {
+	return values.reduce((accumulator, value) => {
+		return value ? [accumulator, value].join('.') : accumulator
+	}, '')
 }

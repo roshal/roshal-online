@@ -4,6 +4,7 @@ import * as p__react from 'react'
 import * as p__react_router_dom from 'react-router-dom'
 
 import d__index from '/components/index'
+import d__az from '/components/az'
 import d__pages__telegram from '/components/pages/telegram'
 
 const component: p__react.FC<{
@@ -21,7 +22,7 @@ const component: p__react.FC<{
 				exact: true,
 				path: '/',
 			}, [
-				$(d__index, {
+				$(d__az, {
 					assets: props.head.assets,
 				}),
 			]),
@@ -29,6 +30,14 @@ const component: p__react.FC<{
 				path: '/telegram',
 			}, [
 				$(d__pages__telegram, {
+					assets: props.head.assets,
+				}),
+			]),
+			$(p__react_router_dom.Route, {
+				exact: true,
+				path: '/',
+			}, [
+				$(d__index, {
 					assets: props.head.assets,
 				}),
 			]),

@@ -1,5 +1,5 @@
 
-export default (value: string) => {
+export default (value: string): string => {
 	value = value.replace(/ ,/g, '&nbsp;,')
 	value = value.replace(/ - /g, ' -&nbsp;')
 	value = value.replace(/ \. /g, '&nbsp;.&emsp;')

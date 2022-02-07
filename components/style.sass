@@ -1,0 +1,37 @@
+
+.container
+	background-color: #000
+	display: flex
+	place-content: center
+
+.container .wrapper
+	background-color: #3333
+	display: flex
+	place-content: space-around
+	place-items: stretch
+	width: 1024px
+	//flex-flow: column wrap
+
+.container .wrapper .head
+	background-color: #3333
+	display: flex
+	flex-flow: column
+
+.container .wrapper .head .block
+	flex: 0.1
+	overflow: auto
+
+.container .wrapper .head .block .box
+	background-color: #3333
+	height: 512px
+
+//.footer
+//	height: 64px
+
+.container .wrapper .body
+	background-color: #3333
+	display: flex
+
+.container .wrapper .body .content
+	background-color: #3333
+	height: 256px

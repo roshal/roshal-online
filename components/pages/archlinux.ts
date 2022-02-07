@@ -6,7 +6,7 @@ import * as m__helpers from '/commons/helpers'
 import d__layouts__common from '/components/layouts/common'
 import s__styles from '/styles/common.sass'
 
-const style = m__helpers.styler(s__styles)
+const style = m__helpers.stylize(s__styles)
 
 const component: p__react.FC<{
 	blocks: {

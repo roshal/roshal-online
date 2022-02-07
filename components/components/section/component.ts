@@ -5,7 +5,19 @@ import * as p__react from 'react'
 import * as m__helpers from '/commons/helpers'
 import s__styles from '/styles/common.sass'
 
-const style = m__helpers.styler(s__styles)
+const style = m__helpers.stylize(s__styles)
+
+interface props {
+	az: string,
+}
+
+const az: p__react.FC<props> = (props) => {
+
+	return $([
+		props.az,
+	])
+
+}
 
 const c__og: p__react.FC<{
 	og?: Record<string, string>,
@@ -20,6 +32,22 @@ const c__og: p__react.FC<{
 	return $([
 		...array.map((value) => {
 			return $([
+				...['az'].map((value, index) => {
+					return [
+						$('div', {
+							key: index,
+							value,
+						}),
+					][0]
+				}),
+				//...['az'].map((value, index) => {
+				//	const za = $(az, {
+				//		key: index as void,
+				//	}, [
+				//		value,
+				//	])
+				//	return za
+				//}),
 				...props.og?.[value] ? [
 					$('meta', {
 						property: ['og', value].join(':'),

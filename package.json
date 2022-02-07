@@ -1,7 +1,5 @@
 {
   "dependencies": {
-    "@types/history": "^4.7.8",
-    "@types/react": "^17.0.3",
     "jquery-ajax": "^2.1.4",
     "lodash": "^4.17.19",
     "normalize.css": "^8.0.1",
@@ -19,8 +17,10 @@
     "@babel/register": "^7.12.1",
     "@hot-loader/react-dom": "^17.0.1",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
+    "@types/history": "^4.7.8",
     "@types/lodash": "^4.14.168",
     "@types/pretty": "^2.0.0",
+    "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.1",
     "@types/react-helmet": "^6.1.0",
     "@types/react-hyperscript": "^3.0.5",

@@ -13,6 +13,7 @@ module.exports = (env = {}, argv = {}) => {
 			/\.sass$/,
 		],
 		include: [
+			r__path.resolve('components'),
 			r__path.resolve('source'),
 			r__path.resolve('styles'),
 		],
@@ -48,11 +49,11 @@ module.exports = (env = {}, argv = {}) => {
 				},
 			},
 		],
-		resolve: {
-			roots: [
-				r__path.resolve('styles'),
-			],
-		},
+		//resolve: {
+		//	roots: [
+		//		r__path.resolve('styles'),
+		//	],
+		//},
 	})
 
 	return {
